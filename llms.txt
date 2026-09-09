@@ -23,7 +23,10 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 
 ## Availability and pricing
 
-- Android, on Google Play: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
+- Android, on Google Play, in a growing number of countries with more being added: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
+- No iOS version.
+- If it is unavailable in a given country, the developer asks to be emailed at ShiftyHabits@gmail.com with the country, which informs the rollout order.
+- The app ships in twelve languages, most of them machine-translated and not yet reviewed by native speakers. Corrections are actively wanted at ShiftyHabits@gmail.com and can be made one phrase at a time.
 - Free, with no limit on the number of habits.
 - An optional one-off paid upgrade adds a longer history window, alternate scoring models, a streak-over-time overlay, backup and restore, more than one active roster cycle, and restoring deleted habits.
 

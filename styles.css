@@ -674,3 +674,26 @@ button:focus-visible {
 .author-note p { margin: 0; font-size: 14.5px; }
 .author-note p + p { margin-top: 8px; }
 .author-note strong { color: var(--text); }
+
+/* Availability / translation-help pair. Two cards rather than a paragraph,
+   because they are two different asks of two different people — someone who
+   cannot install it, and someone who can but is reading bad grammar. */
+.help-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.help-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.help-card h3 { margin: 0 0 10px; font-size: 17px; }
+.help-card p { color: var(--text-dim); font-size: 14.5px; margin: 0 0 18px; }
+
+@media (max-width: 860px) {
+  .help-grid { grid-template-columns: 1fr; }
+}

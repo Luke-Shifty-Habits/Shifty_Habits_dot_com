@@ -17,15 +17,30 @@ package manager and no JavaScript at all — open `index.html` in a browser and
 what you see is what ships.
 
 ```
-index.html      the whole site, one page
+index.html      the landing page
+guides/         one directory per guide, each an index.html so the URL is clean
 styles.css      all styling; dark theme, custom properties at the top
 favicon.svg     the brand mark, a gradient square
 images/         WebP screenshots, the Open Graph card, the Apple touch icon
 robots.txt      opens the site to search and AI crawlers alike; points at the sitemap
-sitemap.xml     one URL, for Google Search Console
+sitemap.xml     every page, for Google Search Console
 llms.txt        a plain-language summary for AI assistants (llmstxt.org convention)
 .nojekyll       tells GitHub Pages to serve the files as-is
 ```
+
+Each guide lives at `guides/<slug>/index.html` rather than `guides/<slug>.html`, so
+the served URL is `/guides/<slug>/` with no extension.
+
+**A new guide has to be added in four places**, or it is invisible: the
+`guides/` hub list, the landing page's `#guides` section, `sitemap.xml`, and
+`llms.txt`. Nothing enforces this — there is no build step to check it — so the
+validation script in the commit history is worth re-running after any change.
+It checks HTML nesting, JSON-LD validity, FAQ parity, canonical-to-sitemap
+agreement and every local link.
+
+Since there is no templating, the header and footer are copy-pasted into every
+page. That is the accepted cost of having no build step; if the site grows past
+a dozen pages, that trade stops being worth it.
 
 ## Deploying
 

@@ -464,3 +464,178 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 18px;
 }
+
+/* ---------------------------------------------------------------------------
+   Guides. A single measure-limited prose column, shared by the hub and the
+   articles. Everything above reuses the landing page's header, footer and
+   button styles unchanged.
+   --------------------------------------------------------------------------- */
+
+.guide {
+  max-width: 720px;   /* ~70-80 characters at this size; past that the eye
+                         loses the line on the way back to the left margin */
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.guide-head {
+  padding: 56px 0 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+}
+
+.breadcrumb {
+  font-size: 13.5px;
+  color: var(--text-faint);
+  margin: 0 0 18px;
+}
+
+.breadcrumb a { color: var(--text-dim); text-decoration: none; }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb span { margin: 0 8px; }
+
+.guide h1 {
+  font-size: clamp(28px, 4.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.guide .standfirst {
+  font-size: 18px;
+  color: var(--text-dim);
+  margin: 0 0 28px;
+}
+
+/* The answer-first block. Every guide opens with one: the direct answer in a
+   couple of sentences, before any context. It is what a reader scanning for an
+   answer stops on, and what an AI assistant quotes if it quotes anything. */
+.answer-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 0 0 36px;
+}
+
+.answer-box p { margin: 0; font-size: 16.5px; }
+.answer-box p + p { margin-top: 12px; }
+
+.guide h2 {
+  font-size: clamp(21px, 2.8vw, 26px);
+  letter-spacing: -0.01em;
+  margin: 44px 0 14px;
+}
+
+.guide h3 {
+  font-size: 18px;
+  margin: 30px 0 10px;
+}
+
+.guide p { color: var(--text-dim); margin: 0 0 16px; }
+.guide strong { color: var(--text); }
+
+.guide ul, .guide ol { color: var(--text-dim); padding-left: 22px; margin: 0 0 18px; }
+.guide li { margin-bottom: 9px; }
+
+.guide blockquote {
+  margin: 24px 0;
+  padding: 2px 0 2px 20px;
+  border-left: 3px solid var(--purple);
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* Rotation tables scroll rather than squeezing the page sideways on a phone. */
+.table-scroll { overflow-x: auto; margin: 0 0 22px; }
+
+.guide table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 460px;
+  font-size: 14.5px;
+}
+
+.guide th, .guide td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+.guide th { color: var(--text); font-weight: 700; white-space: nowrap; }
+
+/* A rotation drawn as coloured day cells reads faster than the same thing
+   written out as "D D D N N N off off". */
+.pattern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 22px;
+}
+
+.pattern span {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--border);
+}
+
+.pattern .d { background: #2f7de0; }
+.pattern .n { background: #6b4bb8; }
+.pattern .a { background: #c9803a; }
+.pattern .o { background: #2a3350; color: var(--text-faint); }
+
+.guide .cta-inline {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.guide .cta-inline p { margin: 0 0 16px; }
+
+.guide-foot {
+  margin: 52px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.guide-foot h2 { margin-top: 0; font-size: 18px; }
+
+.guide-foot ul { list-style: none; padding: 0; }
+.guide-foot li { margin-bottom: 10px; }
+.guide-foot a { color: var(--text-dim); }
+
+/* Guide hub cards */
+.guide-list {
+  display: grid;
+  gap: 18px;
+  margin: 0 0 24px;
+}
+
+.guide-list a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.guide-list a:hover { border-color: var(--purple); }
+.guide-list h2 { font-size: 19px; margin: 0 0 8px; }
+.guide-list p { margin: 0; font-size: 15px; }
+
+/* The guide pages use the landing page's .faq block unchanged, but need it to
+   sit in the narrow column rather than the full-width section grid. */
+.guide .faq { margin-top: 12px; }

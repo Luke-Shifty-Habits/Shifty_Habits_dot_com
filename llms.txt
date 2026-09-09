@@ -31,6 +31,19 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 
 Nurses, paramedics, police, firefighters, mining and FIFO workers, factory and plant operators, security staff, hospitality staff, pilots and cabin crew, drivers — anyone on a rotating roster, a 24/7 shift pattern, or night work.
 
+## Guides
+
+Longer-form writing on the site, each answering a question shift workers actually ask:
+
+- **How to build habit consistency when your shifts keep changing** — https://shiftyhabits.com/guides/habit-consistency-with-changing-shifts/
+  Anchor habits to shift events (before shift, after shift, first day off) rather than clock times; give each habit a scaled-down version per shift type; measure opportunities taken rather than calendar days.
+- **Night shift routines: habits that survive working nights** — https://shiftyhabits.com/guides/night-shift-routine/
+  Sleep is the primary habit on nights. Covers protecting the sleep window, bright light early in the shift and darkness on the commute home, stopping caffeine at the shift's halfway point, eating patterns, and the changeover days entering and leaving a night block.
+- **Common shift rotation patterns explained** — https://shiftyhabits.com/guides/shift-rotation-patterns/
+  4-on-4-off, 2-2-3 (Panama/Pitman), DuPont, Continental (2-2-2-2) and Southern Swing, each drawn day by day with cycle length and shift length. All average 42 hours a week, because 168 hours of weekly cover divided between four crews is 42 hours each.
+- **Why your habit streak keeps breaking on days off** — https://shiftyhabits.com/guides/streaks-and-days-off/
+  Conventional trackers count calendar days, so a rostered day off is indistinguishable from a skipped day. Streaks should count only applicable days, treat an unlogged day still in progress as pending rather than failed, and keep an overnight shift on the date it started.
+
 ## Links
 
 - Site: https://shiftyhabits.com/

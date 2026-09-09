@@ -33,7 +33,7 @@ Nurses, paramedics, police, firefighters, mining and FIFO workers, factory and p
 
 ## Links
 
-- Site: https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/
+- Site: https://shiftyhabits.com/
 - Google Play: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
 - Privacy policy: https://docs.google.com/document/d/e/2PACX-1vTjdST2-JbKbnedTWUjRJ1NU2K01IHRd4cbHZyClvaUImI0EwpfAjEdR8DeGvfa_cEIsf-ZvMq6T-lh/pub
 - Community: https://www.facebook.com/groups/1382021267240330/

@@ -3,7 +3,7 @@
 The marketing site for **Shifty Habits**, a habit tracker for shift workers that
 follows a rotating roster or repeating cycle instead of a fixed calendar week.
 
-- **Live site:** https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/
+- **Live site:** https://shiftyhabits.com/
 - **The app on Google Play:** https://play.google.com/store/apps/details?id=com.shiftyhabits.app
 
 This repository holds **only the website**. The app itself lives in a separate,
@@ -73,29 +73,40 @@ Two consequences worth knowing:
 If a script is ever added, widen the CSP deliberately, and with a hash rather
 than `'unsafe-inline'`.
 
-## Moving to a custom domain
+## The domain
 
-The canonical URL appears in **four** files. Change all of them in one commit —
-a canonical tag pointing at a URL that no longer resolves is worse than having
-none, because it tells Google the real page is somewhere that 404s.
+The site is served at **https://shiftyhabits.com/** — the apex, not `www`.
+`www.shiftyhabits.com` redirects to it, which is GitHub's own behaviour once
+both are pointed here; the apex is canonical because the app's package name
+(`com.shiftyhabits.app`) and the Play listing both read that way.
+
+`CNAME` at the repo root holds the bare domain. GitHub Pages reads that file —
+it is the mapping from hostname to repository, and without it a request that
+resolves correctly still 404s, because the Pages IPs serve many sites and
+nothing else says which one answers for this host. Settings → Pages rewrites
+this file if the domain is changed through the UI, so the file and the setting
+are two views of one thing rather than two things to keep in sync.
+
+DNS at the registrar: the apex has GitHub's four A records
+(`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`)
+and their four AAAA equivalents; `www` is a CNAME to
+`luke-shifty-habits.github.io`. **On Cloudflare these records must be DNS-only
+(grey cloud), not proxied** — Pages issues its own Let's Encrypt certificate and
+cannot complete the ACME challenge through the proxy, which presents as a
+redirect loop or certificate error that looks like a Pages fault and is not.
+
+### If the domain ever changes again
+
+The canonical URL appears in **four** files, and they must move in one commit —
+a canonical tag naming a URL that no longer resolves is worse than none at all,
+because it tells Google the real page is somewhere that 404s.
 
 1. `index.html` — `<link rel="canonical">`, `og:url`, `og:image`,
    `twitter:image`, and the `url`, `image` and `screenshot` fields in the
    `SoftwareApplication` JSON-LD.
 2. `sitemap.xml` — the `<loc>`.
 3. `robots.txt` — the `Sitemap:` line and the comment at the top.
-4. `llms.txt` — the two site links.
+4. `llms.txt` — the site link.
 
-Then add a `CNAME` file at the repo root containing the bare domain (e.g.
-`shiftyhabits.com`). Settings → Pages writes that file for you if you add the
-domain through the UI, which is the less error-prone route.
-
-At the DNS provider, point the apex at GitHub's four A records
-(`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`)
-and their AAAA equivalents, and point `www` at `luke-shifty-habits.github.io`
-with a CNAME. Then enable *Enforce HTTPS* in Settings → Pages once the
-certificate has been issued, which can take up to an hour.
-
-Afterwards, re-submit the sitemap in Google Search Console under the new
-property. GitHub redirects the old Pages URL to the custom domain automatically,
-so existing links keep working.
+Plus `CNAME`, the DNS records, and a re-submitted sitemap in Google Search
+Console under the new property.

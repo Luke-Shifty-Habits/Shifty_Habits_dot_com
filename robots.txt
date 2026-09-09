@@ -1,4 +1,4 @@
-# Shifty Habits — https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/
+# Shifty Habits — https://shiftyhabits.com/
 # Static marketing site. Everything here is public and meant to be indexed,
 # by search crawlers and by AI assistants alike, so nothing is disallowed.
 
@@ -46,4 +46,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/sitemap.xml
+Sitemap: https://shiftyhabits.com/sitemap.xml

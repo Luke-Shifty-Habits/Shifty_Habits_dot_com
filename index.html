@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Static site: no scripts, no third-party requests, no forms. GitHub Pages
+     cannot set response headers, so the policy is declared here instead. The
+     JSON-LD blocks below are data rather than executable script, so
+     `default-src 'none'` does not stop search engines reading them. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0e1a">
+
+<title>Shifty Habits — Habit Tracking Built Around Your Shifts</title>
+<meta name="description" content="Shifty Habits is a habit tracker for shift workers. It follows your rotating roster or repeating cycle instead of a fixed week, so streaks don't break on rostered days off and night-shift habits stay separate from day-shift ones. Free on Android.">
+<link rel="canonical" href="https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shifty Habits">
+<meta property="og:url" content="https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/">
+<meta property="og:title" content="Shifty Habits — Habit Tracking Built Around Your Shifts">
+<meta property="og:description" content="A habit tracker built for rotating rosters and shift work — not the fixed calendar week every other habit app assumes.">
+<meta property="og:image" content="https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="717">
+<meta property="og:image:alt" content="Shifty Habits — habit tracking built around your shifts">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shifty Habits — Habit Tracking Built Around Your Shifts">
+<meta name="twitter:description" content="A habit tracker built for rotating rosters and shift work — not the fixed calendar week every other habit app assumes.">
+<meta name="twitter:image" content="https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/images/og-card.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="images/screenshot-today.webp" type="image/webp" fetchpriority="high">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Shifty Habits",
+  "applicationCategory": "HealthApplication",
+  "applicationSubCategory": "Habit Tracker",
+  "operatingSystem": "Android",
+  "description": "Shifty Habits is a habit tracker built around rotating rosters and shift work. Habits attach to shift types and cycle days instead of fixed calendar days, so a rostered day off never breaks a streak and the app's 'today' follows your active shift rather than midnight.",
+  "url": "https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/",
+  "image": "https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/images/og-card.jpg",
+  "screenshot": [
+    "https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/images/screenshot-today.webp",
+    "https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/images/screenshot-calendar.webp"
+  ],
+  "featureList": [
+    "Habits attached to shift types rather than calendar weekdays",
+    "Repeating cycle rosters and month-by-month changing rosters",
+    "An active shift date, so a shift crossing midnight stays on one day",
+    "Streaks that skip rostered days off instead of breaking",
+    "Per-shift-type filtering of a habit's history and score",
+    "Local-only storage, with no account and no internet connection required"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://play.google.com/store/apps/details?id=com.shiftyhabits.app"
+  },
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.shiftyhabits.app",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.shiftyhabits.app"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best habit tracker for shift workers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shifty Habits is built specifically for shift workers: habits are tied to shift types and roster cycles instead of a fixed weekly schedule, so it handles rotating rosters, night shifts and changing monthly rosters that most habit trackers can't."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Shifty Habits work with rotating rosters and night shifts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can model a repeating cycle (like 4 days on, 4 nights on, 4 off) or a roster that changes every month. Habits attach to shift types, so a habit assigned to \"Night\" only shows up on night shifts, and the app's active day follows the shift rather than the wall clock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my streak break on a rostered day off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A habit only applies on the shift types and weekdays you assign it to. Days it doesn't apply to are skipped when calculating streaks and scores, not counted as a missed day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the app handle a shift that crosses midnight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shifty Habits tracks an \"active shift date\" rather than resetting at midnight. If you start a night shift at 22:00, everything for that shift — habits, reminders, and logs — stays attached to the day the shift started, even after midnight has passed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compare how a habit performs on night shifts versus day shifts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The habit detail screen lets you filter its history and score down to a single shift type, so you can see a habit's consistency on nights separately from its consistency on days, instead of one combined number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Shifty Habits require an account or an internet connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There's no sign-up and no account. All data is stored locally on your device in SQLite, and the app works fully offline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Shifty Habits free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — there's no limit on the number of habits you can track for free. A paid upgrade adds extras like longer history windows, alternate scoring models, and backup/restore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Shifty Habits support a fixed weekly schedule too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can still filter a habit to specific weekdays on top of shift types, so a habit that only makes sense on, say, Mondays still behaves correctly alongside your roster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What platforms is Shifty Habits available on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shifty Habits is currently available for Android on Google Play."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Shifty Habits
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#problem">The problem</a>
+      <a href="#solution">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">For shift workers, by a shift worker</span>
+        <h1>Know what's <span class="accent-red">due</span> <span class="accent-teal">this shift</span> — not this Monday</h1>
+        <p class="lead">
+          Shifty Habits tracks habits against your rotating roster or repeating cycle,
+          not a fixed weekly calendar. Rostered days off don't break your streak, and
+          "today" follows your shift instead of the clock striking midnight.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+          <a class="btn btn-ghost" href="#solution">See how it works</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="images/screenshot-today.webp" alt="Shifty Habits Today screen showing a night shift, today's habits, and completeness and success percentages" width="600" height="1066" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Habit trackers assume you work Monday to Friday</h2>
+        <p>Shift workers don't get that. Every mainstream habit app is built on the same hidden assumption, and it breaks the moment your roster doesn't match it.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="tag">Fixed weeks don't apply</span>
+          <p>Reminders and "weekly" habits assume the same days off every week. A rotating roster means your days off move constantly — sometimes there's no such thing as a weekend at all.</p>
+        </div>
+        <div class="problem-card">
+          <span class="tag">Midnight isn't "the next day"</span>
+          <p>A night shift crosses midnight, but most trackers reset at 00:00 regardless. A habit tied to "before shift" or "after shift" ends up logged against the wrong date, or not tracked at all.</p>
+        </div>
+        <div class="problem-card">
+          <span class="tag">Streaks punish rostered rest</span>
+          <p>A habit you can't do on a rostered day off shouldn't count against you — but calendar-based apps see a blank day and break the streak anyway.</p>
+        </div>
+        <div class="problem-card">
+          <span class="tag">Nights and days blur together</span>
+          <p>A habit that's easy on day shift can be nearly impossible on nights. Fixed-week trackers give you one number and hide that difference completely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built around the roster, not the calendar</h2>
+        <p>Every habit in Shifty Habits attaches to shift types and roster cycles — the calendar week is optional, not the foundation.</p>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon icon-purple" aria-hidden="true">🔁</div>
+          <h3>Repeating cycles or a changing roster</h3>
+          <p>Model a fixed rotation (4 on, 4 off, day/night/off — anything) or a roster that changes every month with entries you type in yourself. Habits attach to shift types, so they follow the roster automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-teal" aria-hidden="true">🕛</div>
+          <h3>"Today" follows your shift, not the clock</h3>
+          <p>Working past midnight doesn't start a new day in Shifty Habits. The app tracks your active shift date, so an overnight shift's habits, reminders and logs all land on the day the shift started.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-red" aria-hidden="true">🔥</div>
+          <h3>Streaks that don't break on days off</h3>
+          <p>A habit only counts on the days it applies to. A rostered day off, a shift type the habit isn't tied to, or a day that hasn't happened yet is skipped over — not counted as a miss.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-gold" aria-hidden="true">🌗</div>
+          <h3>Compare nights with nights, days with days</h3>
+          <p>Filter any habit's history and score down to a single shift type, so you can see exactly how a habit holds up on nights versus how it holds up on days, instead of one blended number that hides the difference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="wrap">
+      <div class="art">
+        <img src="images/screenshot-calendar.webp" alt="Shifty Habits calendar screen showing a rotating day, night and off roster across two months" width="840" height="1493" loading="lazy" decoding="async">
+      </div>
+      <div class="copy">
+        <h2>Your roster, laid out like a calendar</h2>
+        <p>See the whole month at a glance, colour-coded by shift type. Build a rotation once with the visual cycle builder, or type in a roster that changes month to month — the app hides the difference from everything else, including notifications and scoring.</p>
+        <p>Tap any day to log habits for that shift; hold to select a range and make bulk changes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Your data stays on your phone</h2>
+        <p>No accounts, no sign-up, no cloud sync — Shifty Habits doesn't need any of it to work.</p>
+      </div>
+      <div class="trust">
+        <div class="trust-pill"><strong>Local SQLite storage</strong> — everything lives on your device</div>
+        <div class="trust-pill"><strong>No account required</strong> — open the app and start tracking</div>
+        <div class="trust-pill"><strong>No backend</strong> — nothing to breach, nothing to go down</div>
+        <div class="trust-pill"><strong>Your export, your control</strong> — back up and restore your own data on your own terms</div>
+      </div>
+      <p class="section-foot">Read the full <a href="https://docs.google.com/document/d/e/2PACX-1vTjdST2-JbKbnedTWUjRJ1NU2K01IHRd4cbHZyClvaUImI0EwpfAjEdR8DeGvfa_cEIsf-ZvMq6T-lh/pub" rel="noopener">privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Free to track every habit you want</h2>
+        <p>There's no limit on how many habits you can create. The free tier is the real app — the paid tier is extra: longer history, alternate scoring views, and backup.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Frequently asked questions</h2>
+        <p>Straight answers about how Shifty Habits handles shift work.</p>
+      </div>
+      <div class="faq">
+
+        <div class="faq-item">
+          <h3>What is the best habit tracker for shift workers?</h3>
+          <p>Shifty Habits is built specifically for shift workers: habits are tied to shift types and roster cycles instead of a fixed weekly schedule, so it handles rotating rosters, night shifts and changing monthly rosters that most habit trackers can't.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does Shifty Habits work with rotating rosters and night shifts?</h3>
+          <p>Yes. You can model a repeating cycle (like 4 days on, 4 nights on, 4 off) or a roster that changes every month. Habits attach to shift types, so a habit assigned to "Night" only shows up on night shifts, and the app's active day follows the shift rather than the wall clock.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will my streak break on a rostered day off?</h3>
+          <p>No. A habit only applies on the shift types and weekdays you assign it to. Days it doesn't apply to are skipped when calculating streaks and scores, not counted as a missed day.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How does the app handle a shift that crosses midnight?</h3>
+          <p>Shifty Habits tracks an "active shift date" rather than resetting at midnight. If you start a night shift at 22:00, everything for that shift — habits, reminders, and logs — stays attached to the day the shift started, even after midnight has passed.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I compare how a habit performs on night shifts versus day shifts?</h3>
+          <p>Yes. The habit detail screen lets you filter its history and score down to a single shift type, so you can see a habit's consistency on nights separately from its consistency on days, instead of one combined number.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does Shifty Habits require an account or an internet connection?</h3>
+          <p>No. There's no sign-up and no account. All data is stored locally on your device in SQLite, and the app works fully offline.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is Shifty Habits free?</h3>
+          <p>Yes — there's no limit on the number of habits you can track for free. A paid upgrade adds extras like longer history windows, alternate scoring models, and backup/restore.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does Shifty Habits support a fixed weekly schedule too?</h3>
+          <p>Yes. You can still filter a habit to specific weekdays on top of shift types, so a habit that only makes sense on, say, Mondays still behaves correctly alongside your roster.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What platforms is Shifty Habits available on?</h3>
+          <p>Shifty Habits is currently available for Android on Google Play.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Stop forcing your habits into a week that doesn't exist</h2>
+      <p>Track habits that actually follow your roster.</p>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Shifty Habits</span>
+    <span class="footer-links">
+      <a href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Google Play</a>
+      <a href="https://docs.google.com/document/d/e/2PACX-1vTjdST2-JbKbnedTWUjRJ1NU2K01IHRd4cbHZyClvaUImI0EwpfAjEdR8DeGvfa_cEIsf-ZvMq6T-lh/pub" rel="noopener">Privacy</a>
+      <a href="https://www.facebook.com/groups/1382021267240330/" rel="noopener">Community</a>
+      <a href="mailto:ShiftyHabits@gmail.com">Contact</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

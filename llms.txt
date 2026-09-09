@@ -1,0 +1,40 @@
+# Shifty Habits
+
+> A habit tracker for shift workers. Habits attach to shift types and roster cycles rather than to fixed calendar days, so a rotating roster, a night shift crossing midnight, or a rostered day off does not break tracking the way a conventional habit app does. Android only, free, and all data stays on the device.
+
+Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-Friday week. Shift workers do not have one. The app replaces the calendar week with the user's actual roster as the unit that habits are scheduled and scored against.
+
+## How it differs from a conventional habit tracker
+
+- **Habits attach to shift types, not weekdays.** A habit assigned to "Night" appears only on night shifts. An optional weekday filter can be applied on top of that.
+- **Two roster models.** A repeating cycle (for example 4 days on, 4 nights on, 4 off) or a changing roster typed in month by month. The rest of the app is identical either way.
+- **"Today" follows the active shift, not midnight.** A shift starting at 22:00 keeps its habits, reminders and logs on the day the shift started, even after midnight passes. Shifts of up to 72 hours are supported.
+- **Streaks skip days a habit does not apply to.** A rostered day off, a non-matching shift type, or a day that has not happened yet is stepped over rather than counted as a miss.
+- **Scores can be filtered to one shift type.** A habit's history and score can be narrowed to nights alone or days alone, rather than reporting one blended number.
+- **Positive and negative habits both supported**, with a choice of whether a negative habit scores on an inverted scale or the same "higher is better" scale as everything else.
+
+## Privacy and data handling
+
+- No account, no sign-up, no cloud sync, no backend. The app works fully offline.
+- All data is stored locally in SQLite on the device.
+- The database is excluded from Android cloud backup; device-to-device transfer is allowed.
+- Optional, opt-out anonymous diagnostics (Firebase Analytics and Crashlytics). No habit name, note, time of day, pasted URL or linked package name is ever sent.
+- Users can export and restore their own data themselves.
+
+## Availability and pricing
+
+- Android, on Google Play: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
+- Free, with no limit on the number of habits.
+- An optional one-off paid upgrade adds a longer history window, alternate scoring models, a streak-over-time overlay, backup and restore, more than one active roster cycle, and restoring deleted habits.
+
+## Who it is for
+
+Nurses, paramedics, police, firefighters, mining and FIFO workers, factory and plant operators, security staff, hospitality staff, pilots and cabin crew, drivers — anyone on a rotating roster, a 24/7 shift pattern, or night work.
+
+## Links
+
+- Site: https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/
+- Google Play: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
+- Privacy policy: https://docs.google.com/document/d/e/2PACX-1vTjdST2-JbKbnedTWUjRJ1NU2K01IHRd4cbHZyClvaUImI0EwpfAjEdR8DeGvfa_cEIsf-ZvMq6T-lh/pub
+- Community: https://www.facebook.com/groups/1382021267240330/
+- Contact: ShiftyHabits@gmail.com

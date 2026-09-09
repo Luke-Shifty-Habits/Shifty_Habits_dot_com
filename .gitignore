@@ -1,0 +1,10 @@
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Nothing here is built, so there is no output directory to ignore. If a build
+# step is ever added, its output belongs here rather than in the commit.

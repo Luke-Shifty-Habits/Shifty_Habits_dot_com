@@ -1,0 +1,49 @@
+# Shifty Habits — https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/
+# Static marketing site. Everything here is public and meant to be indexed,
+# by search crawlers and by AI assistants alike, so nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+# Named explicitly because several of these default to crawling only what is
+# not disallowed *and* respect a site-level opt-out. Being listed is the opt-in.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://luke-shifty-habits.github.io/Shifty_Habits_dot_com/sitemap.xml

@@ -639,3 +639,38 @@ button:focus-visible {
 /* The guide pages use the landing page's .faq block unchanged, but need it to
    sit in the narrow column rather than the full-width section grid. */
 .guide .faq { margin-top: 12px; }
+
+/* Byline. Google's guidance on who wrote a page is about what a reader can
+   see, not only what the markup claims, so the name appears on the page as
+   well as in the Article JSON-LD. No visible date: these are reference pages
+   rather than news, and a date stamp only makes them look stale later. */
+.byline {
+  font-size: 14px;
+  color: var(--text-faint);
+  margin: -14px 0 28px;
+}
+
+.byline strong { color: var(--text-dim); font-weight: 700; }
+
+.author-note {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 0 0 28px;
+}
+
+.author-note .avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--red), var(--purple) 55%, var(--teal));
+}
+
+.author-note p { margin: 0; font-size: 14.5px; }
+.author-note p + p { margin-top: 8px; }
+.author-note strong { color: var(--text); }

@@ -19,6 +19,7 @@ what you see is what ships.
 ```
 index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
+privacy/        the app's privacy policy, linked from the app and Play Console
 styles.css      all styling; dark theme, custom properties at the top
 favicon.svg     the brand mark, a gradient square
 images/         WebP screenshots, the Open Graph card, the Apple touch icon
@@ -41,6 +42,23 @@ agreement and every local link.
 Since there is no templating, the header and footer are copy-pasted into every
 page. That is the accepted cost of having no build step; if the site grows past
 a dozen pages, that trade stops being worth it.
+
+## The privacy policy
+
+`privacy/index.html` **is** the app's privacy policy: the page the app's
+Settings, About screen and consent sheet open, and the URL registered in Play
+Console. It used to live as `PRIVACY.md` in the app repo with a Google Doc as
+the published copy; it moved here so there is one text, publicly versioned, and
+nothing to paste between the two.
+
+Everything it says is a claim the app's code has to keep true, so **a change to
+what the app collects, sends or reads is a change to this page**, landed
+alongside the app change and with the "Last updated" date moved. The privacy
+section on the landing page and the privacy block in `llms.txt` summarise it,
+so edit them in the same pass.
+
+App builds released before the move still open the Google Doc and can't be
+updated, so that document must stay shared. It now just points here.
 
 ## Deploying
 

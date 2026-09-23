@@ -52,6 +52,6 @@ Longer-form writing on the site, each answering a question shift workers actuall
 
 - Site: https://shiftyhabits.com/
 - Google Play: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
-- Privacy policy: https://docs.google.com/document/d/e/2PACX-1vTjdST2-JbKbnedTWUjRJ1NU2K01IHRd4cbHZyClvaUImI0EwpfAjEdR8DeGvfa_cEIsf-ZvMq6T-lh/pub
+- Privacy policy: https://shiftyhabits.com/privacy/
 - Community: https://www.facebook.com/groups/1382021267240330/
 - Contact: ShiftyHabits@gmail.com

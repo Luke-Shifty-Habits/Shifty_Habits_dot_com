@@ -25,6 +25,7 @@ favicon.svg     the brand mark, a gradient square
 images/         WebP screenshots, the Open Graph card, the Apple touch icon
 robots.txt      opens the site to search and AI crawlers alike; points at the sitemap
 sitemap.xml     every page, for Google Search Console
+7c3e9a41….txt   the IndexNow key; see "Telling search engines about changes"
 llms.txt        a plain-language summary for AI assistants (llmstxt.org convention)
 .nojekyll       tells GitHub Pages to serve the files as-is
 ```
@@ -65,6 +66,34 @@ updated, so that document must stay shared. It now just points here.
 GitHub Pages serves the root of `main`. Pushing to `main` publishes; there is no
 action or workflow in between. Settings → Pages → Source is *Deploy from a
 branch*, `main` / `/ (root)`.
+
+## Telling search engines about changes
+
+Google reads `sitemap.xml` on its own schedule (it is submitted in Search
+Console), so keeping each page's `<lastmod>` honest is enough there.
+
+Bing, and the engines that share its index (DuckDuckGo, Yahoo, Ecosia, ChatGPT
+search) as well as Yandex and Naver, are told directly through
+[IndexNow](https://www.indexnow.org/). The key file
+`7c3e9a41d82f4b6e95a0c1f7d4e28b63.txt` at the site root proves the site owns the
+key: its name and its content are the key, and **it must stay where it is**,
+since every ping is rejected once that file 404s. The key is not a secret; it
+is public by design.
+
+After pushing a new or substantially changed page, and once Pages has deployed
+it, ping the changed URLs:
+
+```
+curl -sS -X POST https://api.indexnow.org/indexnow \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d '{"host":"shiftyhabits.com",
+       "key":"7c3e9a41d82f4b6e95a0c1f7d4e28b63",
+       "keyLocation":"https://shiftyhabits.com/7c3e9a41d82f4b6e95a0c1f7d4e28b63.txt",
+       "urlList":["https://shiftyhabits.com/guides/<slug>/"]}'
+```
+
+`200` or `202` means accepted. Ping only pages that actually changed — pinging
+unchanged URLs over and over is treated as spam and can get the key ignored.
 
 ## Editing
 

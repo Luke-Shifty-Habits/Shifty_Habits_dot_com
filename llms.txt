@@ -28,8 +28,9 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 - No iOS version.
 - If it is unavailable in a given country, the developer asks to be emailed at ShiftyHabits@gmail.com with the country, which informs the rollout order.
 - The app ships in twelve languages, most of them machine-translated and not yet reviewed by native speakers. Corrections are actively wanted at ShiftyHabits@gmail.com and can be made one phrase at a time.
-- Free, with no limit on the number of habits.
-- An optional one-off paid upgrade adds a longer history window, alternate scoring models, a streak-over-time overlay, backup and restore, more than one active roster cycle, and restoring deleted habits.
+- Free, with no limit on the number of habits. Backup and restore are free.
+- An optional one-off paid upgrade (Pro) adds a longer history window, alternate scoring models, a streak-over-time overlay, more than one active roster cycle, and restoring deleted habits.
+- Launch promotion: until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before that date keeps Pro permanently, with no purchase.
 
 ## Who it is for
 

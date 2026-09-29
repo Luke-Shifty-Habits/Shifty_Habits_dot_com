@@ -103,6 +103,11 @@ each appears once as visible HTML and once inside the `FAQPage` JSON-LD block in
 longer exists** — a mismatch between marked-up and visible FAQ content is a
 reason for Google to drop the rich result entirely.
 
+**Meta descriptions** (`<meta name="description">`) must stay between 25 and
+160 characters. Bing Webmaster Tools reports anything longer as an error, and
+both Bing and Google cut it off in results anyway. The Open Graph and JSON-LD
+descriptions are not held to this limit.
+
 **Images** are WebP, resized to roughly twice their display size and no larger.
 The originals are full-resolution PNG phone screenshots, about 1.5 MB each; do
 not commit those. Every `<img>` carries explicit `width`/`height` matching the

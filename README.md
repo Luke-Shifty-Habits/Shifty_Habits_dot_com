@@ -81,16 +81,16 @@ since every ping is rejected once that file 404s. The key is not a secret; it
 is public by design.
 
 After pushing a new or substantially changed page, and once Pages has deployed
-it, ping the changed URLs:
+it, ping the changed URLs. The command is one line on purpose: backslash line
+continuations break when pasted into some terminals. It needs a Unix-style shell
+(macOS, Linux, Git Bash or WSL), since PowerShell and Command Prompt don't treat
+the single quotes as quotes.
 
 ```
-curl -sS -X POST https://api.indexnow.org/indexnow \
-  -H "Content-Type: application/json; charset=utf-8" \
-  -d '{"host":"shiftyhabits.com",
-       "key":"7c3e9a41d82f4b6e95a0c1f7d4e28b63",
-       "keyLocation":"https://shiftyhabits.com/7c3e9a41d82f4b6e95a0c1f7d4e28b63.txt",
-       "urlList":["https://shiftyhabits.com/guides/<slug>/"]}'
+curl -sS -w '\nHTTP %{http_code}\n' -X POST https://api.indexnow.org/indexnow -H "Content-Type: application/json; charset=utf-8" -d '{"host":"shiftyhabits.com","key":"7c3e9a41d82f4b6e95a0c1f7d4e28b63","keyLocation":"https://shiftyhabits.com/7c3e9a41d82f4b6e95a0c1f7d4e28b63.txt","urlList":["https://shiftyhabits.com/guides/<slug>/"]}'
 ```
+
+To ping several pages at once, list them all in `urlList`, separated by commas.
 
 `200` or `202` means accepted. Ping only pages that actually changed — pinging
 unchanged URLs over and over is treated as spam and can get the key ignored.

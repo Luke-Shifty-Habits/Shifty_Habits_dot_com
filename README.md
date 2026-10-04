@@ -20,7 +20,7 @@ what you see is what ships.
 index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
 privacy/        the app's privacy policy, linked from the app and Play Console
-styles.css      all styling; dark theme, custom properties at the top
+styles.css      all styling; dark-only (see "Light mode"), custom properties at the top
 favicon.svg     the brand mark, a gradient square
 images/         WebP screenshots, the Open Graph card, the Apple touch icon
 robots.txt      opens the site to search and AI crawlers alike; points at the sitemap
@@ -60,6 +60,33 @@ so edit them in the same pass.
 
 App builds released before the move still open the Google Doc and can't be
 updated, so that document must stay shared. It now just points here.
+
+## Light mode: there isn't one
+
+**The site is dark-only.** `styles.css` defines a single palette in `:root`
+and has no `@media (prefers-color-scheme: light)` block, and there is no
+`<meta name="color-scheme">`. So a phone or desktop set to light mode still
+gets the dark page. That is a known gap, not a decision. The app itself has
+had a light theme since 1.0.16, so a visitor in light mode sees a site that
+doesn't match the app they're about to install.
+
+If it's added, three things go beyond the custom properties:
+
+- **The header background** is a hard-coded `rgba(10, 14, 26, 0.88)`, not a
+  variable, so it would stay dark on a light page. It isn't the only literal.
+  The roster-pattern dots hard-code their fills (the Off dot is a dark
+  `#2a3350`), there's a stray `color: #fff`, and the glows and shadows are
+  tuned for a dark background. Grep `styles.css` for `#` and `rgba(` outside
+  `:root`.
+- **The screenshots in `images/` are dark-mode captures.** A light page full of
+  dark phone screens may look worse than an all-dark page. Either capture a
+  light set and swap them with `<picture>` + `media="(prefers-color-scheme:
+  light)"`, or keep the dark screenshots and frame them deliberately.
+- **`color-scheme: light dark`** belongs on `:root` too, so form controls and
+  scrollbars follow.
+
+No JavaScript is needed, since the media query does the switching, so the CSP
+doesn't change.
 
 ## Deploying
 

@@ -1,3 +1,5 @@
+/* Dark-only: there is no prefers-color-scheme: light palette yet.
+   See "Light mode: there isn't one" in README.md before adding one. */
 :root {
   --bg: #0a0e1a;
   --bg-alt: #10162a;

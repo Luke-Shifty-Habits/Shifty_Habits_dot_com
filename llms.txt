@@ -18,7 +18,7 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 - No account, no sign-up, no cloud sync, no backend. The app works fully offline.
 - All data is stored locally in SQLite on the device.
 - The database is excluded from Android cloud backup; device-to-device transfer is allowed.
-- Optional anonymous diagnostics (Firebase Analytics and Crashlytics). No habit name, note, time of day, pasted URL or linked package name is ever sent.
+- Optional anonymous diagnostics (Firebase Analytics and Crashlytics). No habit name, shift name, note, pasted URL or linked package name is ever sent.
 - In the UK, the EEA and Switzerland the app asks once on first launch and collects nothing until the user agrees; declining or dismissing leaves it off. Elsewhere diagnostics are on by default and can be turned off at any time in Settings, Privacy. Which applies is decided from the device's own time zone — the app never looks up the user's location.
 - Users can export and restore their own data themselves.
 

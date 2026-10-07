@@ -11,7 +11,8 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 - **"Today" follows the active shift, not midnight.** A shift starting at 22:00 keeps its habits, reminders and logs on the day the shift started, even after midnight passes. Shifts of up to 72 hours are supported.
 - **Streaks skip days a habit does not apply to.** A rostered day off, a non-matching shift type, or a day that has not happened yet is stepped over rather than counted as a miss.
 - **Scores can be filtered to one shift type.** A habit's history and score can be narrowed to nights alone or days alone, rather than reporting one blended number.
-- **Sleep Mode (Pro, Android 10+).** A Do Not Disturb mode of the app's own for sleeping after a shift: starred contacts (or whoever the user picks) and repeat callers still ring through so work can call someone in, volumes are set for sleep and restored afterwards, and it ends itself at a chosen time. The user's own Do Not Disturb settings are never changed.
+- **Sleep Mode (Pro, Android 10+).** A Do Not Disturb mode of the app's own for sleeping after a shift: starred contacts (or whoever the user picks) and repeat callers still ring through so work can call someone in, volumes are set for sleep and restored afterwards, and it ends itself at a chosen time. Each shift type can carry a sleep window anchored to the shift (for example, eight hours starting an hour after a night ends), so Sleep Mode switches on by itself as the roster moves. The user's own Do Not Disturb settings are never changed.
+- **Auto-complete for habits done by default.** A habit can be set so that any applicable day left unlogged is marked done once it is over, so only the misses need a tap.
 - **Positive and negative habits both supported**, with a choice of whether a negative habit scores on an inverted scale or the same "higher is better" scale as everything else.
 
 ## Privacy and data handling

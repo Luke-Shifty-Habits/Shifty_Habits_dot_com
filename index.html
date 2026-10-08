@@ -57,6 +57,8 @@
     "An active shift date, so a shift crossing midnight stays on one day",
     "Streaks that skip rostered days off instead of breaking",
     "Per-shift-type filtering of a habit's history and score",
+    "Sleep Mode: a Do Not Disturb mode for sleeping after shifts that still lets calls from work through, switching on by itself around the roster",
+    "Auto-complete for habits done by default: unlogged days count as done, so only the misses need logging",
     "Local-only storage, with no account and no internet connection required"
   ],
   "offers": {
@@ -129,7 +131,15 @@
       "name": "Is Shifty Habits free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window and alternate scoring models. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good."
+        "text": "Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models and Sleep Mode. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Shifty Habits quiet my phone while I sleep but still let work call?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with Sleep Mode (Pro, Android 10 and later). It switches on a Do Not Disturb mode of its own, so you can sleep after a night shift while your starred contacts — or whoever you choose — and anyone calling twice within 15 minutes still ring through. It can also set your ringer, notification and media volume for sleep and put them back afterwards, and it switches itself off at the time you set. Give a shift type a sleep window and it switches on by itself around your roster — after a night, before an early — or start it from Settings or from a Sleep button on a wind-down habit's reminder. Your own Do Not Disturb settings are never changed."
       }
     },
     {
@@ -260,6 +270,16 @@
           <h3>Compare nights with nights, days with days</h3>
           <p>Filter any habit's history and score down to a single shift type, so you can see exactly how a habit holds up on nights versus how it holds up on days, instead of one blended number that hides the difference.</p>
         </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-teal" aria-hidden="true">⏰</div>
+          <h3>Reminders timed to your shift</h3>
+          <p>Set a reminder for 30 minutes before your shift starts or an hour after it ends, and it moves with the roster. Shifts that run over? Tap End Shift and your end-of-shift reminders wait until you actually finish.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-purple" aria-hidden="true">🌙</div>
+          <h3>Sleep after nights, still get the call</h3>
+          <p>Sleep Mode quiets your phone with a Do Not Disturb mode of its own, while starred contacts and repeat callers still ring through, so you won't miss being called in. It sets your volumes for sleep and switches itself off when you said. Give a shift type a sleep window and it switches on by itself, after nights or before earlies, as the roster moves. Pro, Android 10 and later.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -298,7 +318,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Free to track every habit you want</h2>
-        <p>There's no limit on how many habits you can create, and backup and restore are free. The free tier is the real app — Pro is extra: longer history and alternate scoring views. Until 1 January 2027 all of Pro is free for everyone, and if you open the app before then, you keep it for good.</p>
+        <p>There's no limit on how many habits you can create, and backup and restore are free. The free tier is the real app — Pro is extra: longer history, alternate scoring views and Sleep Mode. Until 1 January 2027 all of Pro is free for everyone, and if you open the app before then, you keep it for good.</p>
       </div>
     </div>
   </section>
@@ -367,7 +387,12 @@
 
         <div class="faq-item">
           <h3>Is Shifty Habits free?</h3>
-          <p>Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window and alternate scoring models. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good.</p>
+          <p>Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models and Sleep Mode. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can Shifty Habits quiet my phone while I sleep but still let work call?</h3>
+          <p>Yes, with Sleep Mode (Pro, Android 10 and later). It switches on a Do Not Disturb mode of its own, so you can sleep after a night shift while your starred contacts — or whoever you choose — and anyone calling twice within 15 minutes still ring through. It can also set your ringer, notification and media volume for sleep and put them back afterwards, and it switches itself off at the time you set. Give a shift type a sleep window and it switches on by itself around your roster — after a night, before an early — or start it from Settings or from a Sleep button on a wind-down habit's reminder. Your own Do Not Disturb settings are never changed.</p>
         </div>
 
         <div class="faq-item">

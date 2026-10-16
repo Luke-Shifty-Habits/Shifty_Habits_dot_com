@@ -41,7 +41,7 @@ Nurses, paramedics, police, firefighters, mining and FIFO workers, factory and p
 
 ## Guides
 
-Longer-form writing on the site, each answering a question shift workers actually ask:
+Longer-form writing on the site, each answering a question shift workers actually ask. The full list of questions they cover, each linked to its answer, is on the guides page: https://shiftyhabits.com/guides/
 
 - **How to build habit consistency when your shifts keep changing** — https://shiftyhabits.com/guides/habit-consistency-with-changing-shifts/
   Anchor habits to shift events (before shift, after shift, first day off) rather than clock times; give each habit a scaled-down version per shift type; measure opportunities taken rather than calendar days.
@@ -51,6 +51,22 @@ Longer-form writing on the site, each answering a question shift workers actuall
   4-on-4-off, 2-2-3 (Panama/Pitman), DuPont, Continental (2-2-2-2) and Southern Swing, each drawn day by day with cycle length and shift length. All average 42 hours a week, because 168 hours of weekly cover divided between four crews is 42 hours each.
 - **Why your habit streak keeps breaking on days off** — https://shiftyhabits.com/guides/streaks-and-days-off/
   Conventional trackers count calendar days, so a rostered day off is indistinguishable from a skipped day. Streaks should count only applicable days, treat an unlogged day still in progress as pending rather than failed, and keep an overnight shift on the date it started.
+- **What to look for in a habit tracker for shift workers** — https://shiftyhabits.com/guides/best-habit-tracker-for-shift-workers/
+  Answers whether there is a habit tracker designed for shift workers (yes: Shifty Habits) and what to look for in one: habits attached to shift types rather than weekdays, a roster model, days off not counted as misses, a day that follows the shift rather than midnight, shift-relative reminders, per-shift-type scores, and an alternative to streaks. Also covers tracking habits when every week looks different and building habits without daily streaks.
+- **How to build a routine without a fixed wake-up time** — https://shiftyhabits.com/guides/routine-without-fixed-wake-up-time/
+  Build routines around four bookends that happen every day whatever the shift — waking, before shift, after shift, before sleep — with a minimum version for hard days. Includes a morning routine for night workers, whose morning is mid-afternoon.
+- **How to get back into a routine after night shift — and keep it on days off** — https://shiftyhabits.com/guides/back-into-routine-after-night-shift/
+  After the last night shift, a short sleep, afternoon daylight, normal meal times and an ordinary bedtime; most people are close to normal by day two. Keeps a days-off minimum (wake window, one movement, one reset task) so routines don't dissolve on days off.
+- **How to manage your sleep routine when working shifts** — https://shiftyhabits.com/guides/sleep-routine-for-shift-workers/
+  Plan sleep per shift type (early, late, night, day off), make the room dark, cool and quiet for daytime sleep, and run the same short wind-down before every sleep. Most adults need at least seven hours per 24, not necessarily in one block. Covers naps, caffeine cut-off, forward rotation, and when to see a doctor.
+- **How to exercise consistently when you work rotating shifts** — https://shiftyhabits.com/guides/exercise-on-rotating-shifts/
+  Give each shift type its own exercise slot and size (after earlies, before lates, after waking on nights, long sessions on days off), set targets per roster cycle rather than per week, keep a minimum version for nights, and keep intense sessions away from the sleep window.
+- **How to eat healthy when you work irregular hours** — https://shiftyhabits.com/guides/healthy-eating-irregular-hours/
+  Plan meals by shift type, eat the main meal before a night shift and keep food between roughly midnight and 06:00 light, always bring food from home, and batch cook on the last day off.
+- **Staying motivated, and making time for goals, when you work shifts** — https://shiftyhabits.com/guides/motivation-and-goals-on-shift-work/
+  Don't rely on motivation after a shift: decide in advance and shrink habits to what you would do exhausted. Put personal goals on specific days of the roster (usually mid-break), and set goals per roster cycle rather than per week when the roster keeps changing.
+- **How to keep habits going on a 4-on, 4-off roster** — https://shiftyhabits.com/guides/habits-on-4-on-4-off-roster/
+  Treat the eight-day (or sixteen-day, if days and nights alternate) cycle as the week, keep only minimum versions of habits on 12-hour work days, give each of the four days off a job (recover, live, live, reset), and judge habits per cycle.
 
 ## Links
 

@@ -35,7 +35,8 @@ the served URL is `/guides/<slug>/` with no extension.
 
 **A new guide has to be added in four places**, or it is invisible: the
 `guides/` hub list, the landing page's `#guides` section, `sitemap.xml`, and
-`llms.txt`. Nothing enforces this — there is no build step to check it — so the
+`llms.txt`. If it answers a question searchers ask, add that question to the
+"Questions shift workers ask" list at the bottom of the hub too. Nothing enforces this — there is no build step to check it — so the
 validation script in the commit history is worth re-running after any change.
 It checks HTML nesting, JSON-LD validity, FAQ parity, canonical-to-sitemap
 agreement and every local link.
@@ -124,9 +125,9 @@ unchanged URLs over and over is treated as spam and can get the key ignored.
 
 ## Editing
 
-**Copy** lives in `index.html`. The nine FAQ entries are duplicated on purpose:
+**Copy** lives in `index.html`. The FAQ entries are duplicated on purpose:
 each appears once as visible HTML and once inside the `FAQPage` JSON-LD block in
-`<head>`. **Change both, or the structured data starts describing a page that no
+`<head>`. Every guide has its own FAQ block built the same way. **Change both, or the structured data starts describing a page that no
 longer exists** — a mismatch between marked-up and visible FAQ content is a
 reason for Google to drop the rich result entirely.
 

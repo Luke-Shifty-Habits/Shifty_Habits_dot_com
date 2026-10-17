@@ -68,7 +68,7 @@ header.site {
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--red), var(--purple) 55%, var(--teal));
+  background: url("images/logo-mark.png") center / cover no-repeat;
   flex-shrink: 0;
 }
 

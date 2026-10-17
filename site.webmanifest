@@ -1,0 +1,13 @@
+{
+  "name": "Shifty Habits",
+  "short_name": "Shifty Habits",
+  "description": "Habit tracker for shift workers.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": [
+    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

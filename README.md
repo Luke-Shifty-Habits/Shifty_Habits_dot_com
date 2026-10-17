@@ -21,7 +21,8 @@ index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
 privacy/        the app's privacy policy, linked from the app and Play Console
 styles.css      all styling; dark-only (see "Light mode"), custom properties at the top
-favicon.svg     the brand mark, a gradient square
+favicon.ico     the app icon at 16/32/48px, for browser tabs and Google's search results
+site.webmanifest  names the 192/512px icons for Android's "Add to home screen"
 images/         WebP screenshots, the Open Graph card, the Apple touch icon
 robots.txt      opens the site to search and AI crawlers alike; points at the sitemap
 sitemap.xml     every page, for Google Search Console
@@ -44,6 +45,24 @@ agreement and every local link.
 Since there is no templating, the header and footer are copy-pasted into every
 page. That is the accepted cost of having no build step; if the site grows past
 a dozen pages, that trade stops being worth it.
+
+## The icon
+
+Every icon on the site is the app's own launcher icon, the red/teal crescent and
+clock: `assets/images/icon.png` in the app repo. A blue/amber version ("Variant
+C") is being A/B tested on the Play listing, so if that wins, regenerate these
+from the new icon and swap them in:
+
+- `favicon.ico` (16, 32 and 48px) and `images/icon-192.png`, linked from every page
+- `images/icon-512.png`, used only by `site.webmanifest`
+- `images/logo-mark.png` (64px), the header's brand mark, set in `styles.css`
+- `images/apple-touch-icon.png` (180px), deliberately left square and opaque, since
+  iOS rounds the corners itself and fills any transparency with black
+- `images/og-card.jpg`, the social preview card, which shows the icon too
+
+The source icon is a full square with black corners outside the rounded tile and
+no transparency. Every size except the Apple one gets a rounded mask, radius
+about 20% of the width, so those corners don't show as black.
 
 ## The privacy policy
 

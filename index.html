@@ -8,7 +8,7 @@
      cannot set response headers, so the policy is declared here instead. The
      JSON-LD blocks below are data rather than executable script, so
      `default-src 'none'` does not stop search engines reading them. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#0a0e1a">
 
@@ -30,7 +30,9 @@
 <meta name="twitter:description" content="A habit tracker built for rotating rosters and shift work — not the fixed calendar week every other habit app assumes.">
 <meta name="twitter:image" content="https://shiftyhabits.com/images/og-card.jpg">
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="manifest" href="site.webmanifest">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <link rel="stylesheet" href="styles.css">

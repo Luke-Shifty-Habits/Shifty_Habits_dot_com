@@ -61,6 +61,12 @@
     "Per-shift-type filtering of a habit's history and score",
     "Sleep Mode: a Do Not Disturb mode for sleeping after shifts that still lets calls from work through, switching on by itself around the roster",
     "Auto-complete for habits done by default: unlogged days count as done, so only the misses need logging",
+    "Reminders anchored to shift start, shift end or bedtime, worked out from the roster",
+    "End Shift button so end-of-shift reminders wait until a shift that runs over actually ends",
+    "A sample preview with months of history to look around before setting up",
+    "Day notes tagged to habits, shown as markers on the habit's graph",
+    "Streak milestones at 10, 30, 100 and 365 days and consistency milestones at 60, 70, 80 and 90 percent",
+    "Spots a shift type a habit struggles on and offers a separate version for it",
     "Local-only storage, with no account and no internet connection required"
   ],
   "offers": {
@@ -186,6 +192,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I try Shifty Habits before setting up my roster?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A new install opens on a sample roster with months of history already filled in, so you can look around the calendar, habits, graphs and Sleep Mode before entering anything. When you're ready, tap “Set up my own”; nothing from the sample carries over."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is Shifty Habits free?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -275,6 +289,7 @@
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
           <a class="btn btn-ghost" href="#solution">See how it works</a>
         </div>
+        <p class="hero-note">Opens on a sample roster you can look around first. No account, no setup.</p>
       </div>
       <div class="hero-art">
         <img src="images/screenshot-today.webp" alt="Shifty Habits Today screen showing a night shift, today's habits, and completeness and success percentages" width="600" height="1066" fetchpriority="high" decoding="async">
@@ -339,12 +354,49 @@
         <div class="feature-card">
           <div class="feature-icon icon-teal" aria-hidden="true">⏰</div>
           <h3>Reminders timed to your shift</h3>
-          <p>Set a reminder for 30 minutes before your shift starts or an hour after it ends, and it moves with the roster. Shifts that run over? Tap End Shift and your end-of-shift reminders wait until you actually finish.</p>
+          <p>Set a reminder for 30 minutes before your shift starts, an hour after it ends, or an hour before bed, and it moves with the roster. Shifts that run over? Switch on the End Shift button under Settings → End Shift, and your end-of-shift reminders wait until you tap End Shift on the notification.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon icon-purple" aria-hidden="true">🌙</div>
           <h3>Sleep after nights, still get the call</h3>
-          <p>Sleep Mode quiets your phone with a Do Not Disturb mode of its own, while starred contacts and repeat callers still ring through, so you won't miss being called in. It sets your volumes for sleep and switches itself off when you said. Give a shift type a sleep window and it switches on by itself, after nights or before earlies, as the roster moves. Pro, Android 10 and later.</p>
+          <p>Sleep Mode quiets your phone with a Do Not Disturb mode of its own, while starred contacts and repeat callers still ring through, so you won't miss being called in. It sets your volumes for sleep and switches itself off when you said. Give a shift type a sleep window and it switches on by itself, after nights or before earlies, as the roster moves. Pro, Android 10 and later. <a href="guides/do-not-disturb-by-shift-schedule/">How it compares with other ways to schedule Do Not Disturb</a>.</p>
+        </div>
+      </div>
+
+      <div class="section-head section-head-sub" id="more">
+        <h2>And the things that keep you using it</h2>
+        <p>Smaller features, each there because a shift worker needed it.</p>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon icon-gold" aria-hidden="true">👀</div>
+          <h3>Look around before you set anything up</h3>
+          <p>The app opens on a sample roster with months of history already in it: habits, streaks, a week off sick, a swapped shift. Tap through the calendar, the graphs and Sleep Mode, then choose "Set up my own" when you're ready. None of the sample data carries over.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-teal" aria-hidden="true">✅</div>
+          <h3>Auto-complete for habits you nearly always do</h3>
+          <p>Some habits happen by default, and ticking them every day is a chore. Set one to Auto-complete and any day it applied to that you leave blank is marked done once it's over, so you only tap ✗ on the days you miss.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-purple" aria-hidden="true">🛏️</div>
+          <h3>Reminders timed to your bedtime</h3>
+          <p>A wind-down habit can remind you before bed rather than before or after a shift. The app works out bedtime from your roster — your Sleep Mode window where you've set one, otherwise from when your next shift starts — so after nights it's a morning, before earlies an early evening.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-gold" aria-hidden="true">📝</div>
+          <h3>Notes that stay with the habit</h3>
+          <p>Add a note to any day and tag it to habits with #, like "#Gym — knee sore". Tagged notes show as markers on that habit's graph, so when a score dips you can see what was going on at the time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-red" aria-hidden="true">🎉</div>
+          <h3>Milestones worth celebrating</h3>
+          <p>Streaks are celebrated at 10, 30, 100 and 365 days, and a habit's consistency when it breaks 60, 70, 80 or 90%. Lose a streak and build it back, and it celebrates again — with a nod to getting back up.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-teal" aria-hidden="true">🔍</div>
+          <h3>Spots the shift a habit struggles on</h3>
+          <p>If a habit goes well on your other shifts but keeps slipping on one, nights say, its page points that out and asks whether a smaller version or a different time would fit that shift. One tap makes a separate version just for it.</p>
         </div>
       </div>
     </div>
@@ -487,6 +539,11 @@
         </div>
 
         <div class="faq-item">
+          <h3>Can I try Shifty Habits before setting up my roster?</h3>
+          <p>Yes. A new install opens on a sample roster with months of history already filled in, so you can look around the calendar, habits, graphs and Sleep Mode before entering anything. When you're ready, tap “Set up my own”; nothing from the sample carries over.</p>
+        </div>
+
+        <div class="faq-item">
           <h3>Is Shifty Habits free?</h3>
           <p>Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models and Sleep Mode. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good.</p>
         </div>
@@ -539,6 +596,14 @@
           <h3>Common shift rotation patterns explained</h3>
           <p>4-on-4-off, 2-2-3 Panama, DuPont, Continental and Southern Swing, drawn out day by day.</p>
         </a>
+        <a href="guides/panama-shift-pattern/">
+          <h3>The Panama (2-2-3) shift pattern explained</h3>
+          <p>Every other weekend off, the 28-day days-and-nights version, and habits planned by fortnight.</p>
+        </a>
+        <a href="guides/continental-shift-pattern/">
+          <h3>The continental shift pattern explained</h3>
+          <p>Two days, two nights, four off, the 8-hour version, and sleeping on two nights at a time.</p>
+        </a>
         <a href="guides/streaks-and-days-off/">
           <h3>Why your habit streak keeps breaking, and how to stop it</h3>
           <p>What conventional habit apps get wrong about rostered days off, and how streaks should be counted.</p>
@@ -574,6 +639,10 @@
         <a href="guides/habits-on-4-on-4-off-roster/">
           <h3>How to keep habits going on a 4-on, 4-off roster</h3>
           <p>The eight-day cycle as your week, a job for each day off, and minimum versions for 12-hour shifts.</p>
+        </a>
+        <a href="guides/do-not-disturb-by-shift-schedule/">
+          <h3>How to make Do Not Disturb follow your shift roster</h3>
+          <p>Four ways to keep your phone quiet around a rotating roster, and still get the call from work.</p>
         </a>
       </div>
     </div>

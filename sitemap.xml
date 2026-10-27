@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shiftyhabits.com/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/privacy/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/habit-consistency-with-changing-shifts/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/night-shift-routine/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/shift-rotation-patterns/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/streaks-and-days-off/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/best-habit-tracker-for-shift-workers/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/sleep-routine-for-shift-workers/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/healthy-eating-irregular-hours/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -87,6 +87,24 @@
   <url>
     <loc>https://shiftyhabits.com/guides/habits-on-4-on-4-off-roster/</loc>
     <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/guides/panama-shift-pattern/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/guides/continental-shift-pattern/</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

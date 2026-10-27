@@ -69,6 +69,8 @@ Longer-form writing on the site, each answering a question shift workers actuall
   Don't rely on motivation after a shift: decide in advance and shrink habits to what you would do exhausted. Put personal goals on specific days of the roster (usually mid-break), and set goals per roster cycle rather than per week when the roster keeps changing.
 - **How to keep habits going on a 4-on, 4-off roster** — https://shiftyhabits.com/guides/habits-on-4-on-4-off-roster/
   Treat the eight-day (or sixteen-day, if days and nights alternate) cycle as the week, keep only minimum versions of habits on 12-hour work days, give each of the four days off a job (recover, live, live, reset), and judge habits per cycle.
+- **How to make Do Not Disturb follow your shift roster** — https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/
+  Android's built-in Do Not Disturb schedules repeat by weekday, so they can't follow a rotating roster. Compares four options: turning it on by hand, a calendar-event rule (Pixel and near-stock Android; runs during events, so sleep blocks must be in the calendar; not available in Samsung's Modes and Routines), automation apps such as MacroDroid or Tasker, and Shifty Habits' Sleep Mode, which works sleep windows out from the roster itself. Recommends letting starred contacts and repeat callers through so work can still call.
 
 ## Links
 

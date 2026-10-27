@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0e1a">
+
+<title>Do Not Disturb by Shift Schedule: 4 Ways on Android</title>
+<meta name="description" content="How to make Do Not Disturb follow a rotating shift roster on Android, so your phone stays quiet while you sleep after nights and work can still call you in.">
+<link rel="canonical" href="https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shifty Habits">
+<meta property="og:url" content="https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/">
+<meta property="og:title" content="Do Not Disturb by Shift Schedule: 4 Ways on Android">
+<meta property="og:description" content="Weekly schedules, calendar-event rules, automation apps and a roster-driven sleep mode — what each one does when your shifts keep moving.">
+<meta property="og:image" content="https://shiftyhabits.com/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shiftyhabits.com/images/og-card.jpg">
+
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+<link rel="stylesheet" href="../../styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to make Do Not Disturb follow your shift roster",
+  "description": "Weekly schedules, calendar-event rules, automation apps and a roster-driven sleep mode — what each one does when your shifts keep moving.",
+  "abstract": "Android's built-in Do Not Disturb schedules repeat by weekday, which a rotating roster breaks. A calendar-event rule or an automation app can follow sleep blocks you enter yourself; Shifty Habits' Sleep Mode works the sleep windows out from the roster and lets work calls through.",
+  "url": "https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/"
+  },
+  "image": "https://shiftyhabits.com/images/og-card.jpg",
+  "datePublished": "2026-10-27",
+  "dateModified": "2026-10-27",
+  "author": {
+    "@type": "Person",
+    "name": "Luke",
+    "description": "Shift worker and the developer of Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Do Not Disturb for shift workers"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shiftyhabits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://shiftyhabits.com/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Do Not Disturb by shift schedule",
+      "item": "https://shiftyhabits.com/guides/do-not-disturb-by-shift-schedule/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Do Not Disturb follow a rotating shift schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with Android's ordinary Do Not Disturb schedules, which repeat by weekday and time. You can get close by putting your sleep blocks into a calendar and using a calendar-event rule or an automation app, or use an app that reads the roster itself: Shifty Habits' Sleep Mode works out a sleep window around each shift and switches Do Not Disturb on and off by itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an app that sets Do Not Disturb from my shift calendar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Shifty Habits' Sleep Mode (Android 10 and later, a Pro feature that is free for everyone until 1 January 2027) takes your repeating cycle or changing roster, gives each shift type a sleep window, and turns on a Do Not Disturb mode of its own for those windows, with starred contacts and repeat callers still ringing through. Automation apps such as MacroDroid and Tasker can also switch Do Not Disturb on during calendar events, if you keep your sleep in a calendar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I sleep after a night shift without missing a call from work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use Do Not Disturb with exceptions rather than silent mode: let starred contacts through, star your workplace and your manager, and allow repeat callers so anyone who rings twice within 15 minutes gets through. Alarms should always be allowed. Shifty Habits' Sleep Mode sets this up as a mode of its own, so your normal Do Not Disturb settings are left alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Android turn on Do Not Disturb during Google Calendar events?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Pixel and most phones close to stock Android, yes: Do Not Disturb (called Modes on newer versions) can be scheduled to run during events in a chosen calendar. It runs while an event is happening, so for sleep you need sleep events in the calendar, not just your shifts. Samsung's Modes and Routines doesn't offer a calendar-event trigger, so Galaxy owners usually need an automation app or a roster-aware app instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Sleep Mode change my own Do Not Disturb settings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Shifty Habits' Sleep Mode uses a Do Not Disturb mode of its own with its own call rules, so whatever you have set up for your normal Do Not Disturb is untouched, and when Sleep Mode ends your phone goes back to exactly how it was. On Android 15 and later it appears in the system's Modes list under the app's name."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../../">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Shifty Habits
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../">Guides</a>
+      <a href="../../#solution">How it works</a>
+      <a href="../../#privacy">Privacy</a>
+      <a href="../../#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+  </div>
+</header>
+
+<main id="main">
+<article class="guide">
+
+  <div class="guide-head">
+    <p class="breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Guides</a><span>/</span>Do Not Disturb by shift schedule</p>
+    <h1>How to make Do Not Disturb follow your shift roster</h1>
+    <p class="standfirst">Your phone's bedtime schedule assumes you go to sleep at the same time every night. On a rotating roster you might be asleep at 09:00 on Tuesday, 21:30 on Friday and 23:00 on a day off. Here are the ways to make Do Not Disturb keep up, and what each one costs you.</p>
+    <p class="byline">By <strong>Luke</strong> — shift worker, and the developer of Shifty Habits</p>
+  </div>
+
+  <div class="answer-box">
+    <p><strong>The short answer:</strong> Android's built-in Do Not Disturb schedules repeat <strong>by weekday</strong>, so they can't follow a rotating roster. You can get close by keeping your <strong>sleep blocks in a calendar</strong> and using a calendar-event rule or an automation app. Or you can use an app that <strong>reads the roster itself</strong>: Shifty Habits' Sleep Mode works out when you sleep around each shift and switches Do Not Disturb on and off without you entering anything.</p>
+    <p>Whichever you use, set it to let <strong>starred contacts and repeat callers</strong> through, so work can still call you in.</p>
+  </div>
+
+  <h2>Why the normal bedtime schedule doesn't work</h2>
+
+  <p>Every phone has a way to switch Do Not Disturb on at a set time: "every night 22:30 to 06:30", or "weekdays only". That's fine on a Monday-to-Friday job. On shifts it fails in three ways:</p>
+
+  <ul>
+    <li><strong>The days move.</strong> A schedule repeats by weekday, but a roster doesn't. On a <a href="../habits-on-4-on-4-off-roster/">4-on, 4-off</a> or a <a href="../shift-rotation-patterns/">Panama or DuPont rotation</a>, your nights land on different weekdays every cycle.</li>
+    <li><strong>The times move.</strong> After nights you sleep in the morning, before earlies you sleep early in the evening, and on days off you sleep at night. One schedule can't hold all three.</li>
+    <li><strong>You can't afford to be unreachable.</strong> Plenty of shift workers get called in or rung about a shift swap. Muting everything is worse than leaving the phone alone.</li>
+  </ul>
+
+  <p>So the question isn't how to turn Do Not Disturb on. It's how to tie it to the roster instead of the calendar week.</p>
+
+  <h2>Four ways to do it on Android</h2>
+
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Method</th><th>Follows a rotating roster?</th><th>Effort</th><th>Good for</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Turning it on by hand</strong></td><td>Only if you remember</td><td>Every sleep</td><td>Occasional shift work</td></tr>
+      <tr><td><strong>Calendar-event rule</strong> (Pixel and phones close to stock Android)</td><td>Yes, if your sleep is in the calendar</td><td>Enter sleep blocks for every shift</td><td>People who already keep a detailed calendar</td></tr>
+      <tr><td><strong>Automation app</strong> (MacroDroid, Tasker)</td><td>Yes, with setup</td><td>An afternoon of building rules, and fixing them when they break</td><td>People who enjoy tinkering, and Samsung owners who want calendar triggers</td></tr>
+      <tr><td><strong>Roster-aware app</strong> (Shifty Habits' Sleep Mode)</td><td>Yes, from the roster itself</td><td>One sleep rule per shift type, once</td><td>Rotating cycles and rosters that change every month</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>1. Turn it on by hand</h3>
+
+  <p>The quick settings tile works, and costs nothing. The trouble is the moment you need it: you get home after a night shift, exhausted, and the step most likely to be forgotten is the one between you and a phone call at 11:00. If you go this way, make it part of the same wind-down every time. The <a href="../sleep-routine-for-shift-workers/">sleep routine guide</a> covers building one.</p>
+
+  <h3>2. A calendar-event rule</h3>
+
+  <p>On Pixel phones and many others close to stock Android, Do Not Disturb (called <strong>Modes</strong> on newer versions) can be scheduled to run <strong>during events in a calendar</strong>, instead of at fixed times. You choose which calendar it watches. The menus vary between phones and Android versions, but it sits under Settings, then Sound or Modes, then Do Not Disturb schedules.</p>
+
+  <p>The catch is that it runs <em>while an event is happening</em>. If your calendar only holds your shifts, you'll get a quiet phone at work, not in bed. For sleep, you need a separate calendar of sleep blocks, kept up to date every time the roster changes. That's workable on a fixed rotation you can copy forward, and a chore on a roster that comes out month by month.</p>
+
+  <p>Samsung's Modes and Routines doesn't have a calendar-event trigger, so on a Galaxy phone this option isn't there.</p>
+
+  <h3>3. An automation app</h3>
+
+  <p>Automation apps such as MacroDroid and Tasker can switch Do Not Disturb on and off on almost any trigger, calendar events included. They work on Samsung phones too. They're powerful, but you're building the logic yourself: which calendar, which events, how the times are worked out, and what happens when a shift is swapped. You also need the sleep blocks to be somewhere the app can read, which usually means the same calendar chore as option 2.</p>
+
+  <h3>4. An app that reads the roster: Shifty Habits' Sleep Mode</h3>
+
+  <p>This is the one I built for it. Shifty Habits already knows your roster, whether that's a repeating cycle or a roster you enter as you get it, so it can work out the sleep windows itself:</p>
+
+  <ul>
+    <li><strong>Give each shift type a sleep window, once.</strong> For an early, "wake up an hour before it starts, after eight hours' sleep". For a night, "go to sleep an hour after it ends". For days off, a bedtime.</li>
+    <li><strong>It follows the roster from then on.</strong> Every night shift on the calendar gets its morning sleep, every early its early night, weeks ahead. Swap a shift or change its hours and the windows move with it.</li>
+    <li><strong>Shifts come first.</strong> If a sleep window would run into your next shift, it's cut short so Do Not Disturb is never still on when you need to be up.</li>
+    <li><strong>It runs without the app open.</strong> Do Not Disturb comes on and goes off by itself, including after the phone restarts. Open the app now and then so it can plan further ahead.</li>
+  </ul>
+
+  <p>For the nights that don't follow the plan, there's a <strong>Sleep now</strong> button, which stops by itself before your next shift, and a habit reminder can carry the same button, so "go to bed" can be one tap from the notification.</p>
+
+  <div class="cta-inline">
+    <p><strong>Sleep Mode is in Shifty Habits</strong>, a habit tracker built around rotating rosters. It's a Pro feature on Android 10 and later, and until 1 January 2027 every Pro feature is free for everyone. Open the app before then and you keep it for good.</p>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it free on Google Play</a>
+  </div>
+
+  <h2>Still getting the call from work</h2>
+
+  <p>Whichever method you use, how you set up the exceptions matters more than how Do Not Disturb gets switched on. A sensible setup for shift work:</p>
+
+  <ul>
+    <li><strong>Calls from starred contacts only.</strong> Star your workplace's numbers, your manager and anyone at home who might need you. Everyone else can wait until you're up.</li>
+    <li><strong>Repeat callers on.</strong> Anyone who rings twice within 15 minutes gets through. Someone with something urgent will call twice, and a sales call won't.</li>
+    <li><strong>Alarms always on.</strong> You shouldn't be able to sleep through the alarm for your next shift.</li>
+    <li><strong>Messages and other notifications quiet.</strong> Group chats are the main thing waking up day sleepers.</li>
+  </ul>
+
+  <p>Sleep Mode offers exactly these choices: calls from anyone, contacts, starred contacts or nobody, repeat callers on or off, and alarms always ringing. It can also set your ringer, notification and media volumes for sleep and put them back afterwards. It uses a Do Not Disturb mode of its own, so your normal Do Not Disturb settings aren't touched, and on Android 15 and later it shows in the system's Modes list under the app's name.</p>
+
+  <p>Android does the call filtering itself. Shifty Habits never reads your contacts or your call history; the <a href="../../privacy/">privacy policy</a> has the detail.</p>
+
+  <h2>What about an iPhone?</h2>
+
+  <p>Shifty Habits is Android only. On an iPhone, a Sleep or Do Not Disturb Focus with a time schedule has the same weekday problem, so the closest you'll get is turning it on by hand or with a Shortcuts automation.</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq">
+
+    <div class="faq-item">
+      <h3>Can Do Not Disturb follow a rotating shift schedule?</h3>
+      <p>Not with Android's ordinary Do Not Disturb schedules, which repeat by weekday and time. You can get close by putting your sleep blocks into a calendar and using a calendar-event rule or an automation app, or use an app that reads the roster itself: Shifty Habits' Sleep Mode works out a sleep window around each shift and switches Do Not Disturb on and off by itself.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is there an app that sets Do Not Disturb from my shift calendar?</h3>
+      <p>Yes. Shifty Habits' Sleep Mode (Android 10 and later, a Pro feature that is free for everyone until 1 January 2027) takes your repeating cycle or changing roster, gives each shift type a sleep window, and turns on a Do Not Disturb mode of its own for those windows, with starred contacts and repeat callers still ringing through. Automation apps such as MacroDroid and Tasker can also switch Do Not Disturb on during calendar events, if you keep your sleep in a calendar.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I sleep after a night shift without missing a call from work?</h3>
+      <p>Use Do Not Disturb with exceptions rather than silent mode: let starred contacts through, star your workplace and your manager, and allow repeat callers so anyone who rings twice within 15 minutes gets through. Alarms should always be allowed. Shifty Habits' Sleep Mode sets this up as a mode of its own, so your normal Do Not Disturb settings are left alone.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can Android turn on Do Not Disturb during Google Calendar events?</h3>
+      <p>On Pixel and most phones close to stock Android, yes: Do Not Disturb (called Modes on newer versions) can be scheduled to run during events in a chosen calendar. It runs while an event is happening, so for sleep you need sleep events in the calendar, not just your shifts. Samsung's Modes and Routines doesn't offer a calendar-event trigger, so Galaxy owners usually need an automation app or a roster-aware app instead.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does Sleep Mode change my own Do Not Disturb settings?</h3>
+      <p>No. Shifty Habits' Sleep Mode uses a Do Not Disturb mode of its own with its own call rules, so whatever you have set up for your normal Do Not Disturb is untouched, and when Sleep Mode ends your phone goes back to exactly how it was. On Android 15 and later it appears in the system's Modes list under the app's name.</p>
+    </div>
+
+  </div>
+
+  <div class="guide-foot">
+    <div class="author-note">
+      <div class="avatar" aria-hidden="true"></div>
+      <div>
+        <p><strong>Luke</strong> works shifts and built Shifty Habits because every habit tracker he tried assumed a Monday-to-Friday week he didn't have.</p>
+        <p>Everything here comes from working a roster rather than from reading about one.</p>
+      </div>
+    </div>
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="../sleep-routine-for-shift-workers/">How to manage your sleep routine when working shifts</a></li>
+      <li><a href="../night-shift-routine/">How to maintain a routine when working night shifts</a></li>
+      <li><a href="../shift-rotation-patterns/">Common shift rotation patterns explained</a></li>
+    </ul>
+  </div>
+
+</article>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Shifty Habits</span>
+    <span class="footer-links">
+      <a href="../../">Home</a>
+      <a href="../">Guides</a>
+      <a href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Google Play</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="mailto:ShiftyHabits@gmail.com">Contact</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -177,6 +177,12 @@ h1 .accent-teal { color: var(--teal); }
   flex-wrap: wrap;
 }
 
+.hero-note {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--text-faint);
+}
+
 .hero-art {
   display: flex;
   justify-content: center;
@@ -245,6 +251,9 @@ section.alt { background: var(--bg-alt); }
 }
 
 /* Feature list */
+/* A second heading inside a section, above a further feature grid. */
+.section-head-sub { margin-top: 72px; }
+
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

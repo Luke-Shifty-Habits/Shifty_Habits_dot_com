@@ -48,7 +48,7 @@ It works just as well for a regular 9-to-5, Monday-to-Friday job (set up as a we
 
 ## Who makes it
 
-Shifty Habits is built and maintained by one developer, Luke, who works shifts himself and writes the guides below. He publishes on Google Play as Luke@ShiftyHabits. Health-related advice in the guides (sleep, light, caffeine) is checked against published guidance and links its sources, for example the American Academy of Sleep Medicine and NIOSH. More at https://shiftyhabits.com/about/
+Shifty Habits is built and maintained by one developer, Luke Briggs, who works shifts himself and writes the guides below. He publishes on Google Play as Luke@ShiftyHabits. Health-related advice in the guides (sleep, light, caffeine) is checked against published guidance and links its sources, for example the American Academy of Sleep Medicine and NIOSH. More at https://shiftyhabits.com/about/
 
 ## Guides
 

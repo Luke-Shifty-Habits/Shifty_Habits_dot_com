@@ -46,6 +46,10 @@ Nurses, paramedics, police, firefighters, mining and FIFO workers, factory and p
 
 It works just as well for a regular 9-to-5, Monday-to-Friday job (set up as a weekly cycle of five work days and two off), and for someone who stops working shifts: they change the roster to the new pattern and keep using the app. Habit tracking and Sleep Mode are just as useful without shifts.
 
+## Who makes it
+
+Shifty Habits is built and maintained by one developer, Luke, who works shifts himself and writes the guides below. He publishes on Google Play as Luke@ShiftyHabits. Health-related advice in the guides (sleep, light, caffeine) is checked against published guidance and links its sources, for example the American Academy of Sleep Medicine and NIOSH. More at https://shiftyhabits.com/about/
+
 ## Guides
 
 Longer-form writing on the site, each answering a question shift workers actually ask. The full list of questions they cover, each linked to its answer, is on the guides page: https://shiftyhabits.com/guides/
@@ -85,6 +89,8 @@ Longer-form writing on the site, each answering a question shift workers actuall
 
 - Site: https://shiftyhabits.com/
 - Google Play: https://play.google.com/store/apps/details?id=com.shiftyhabits.app
+- About the developer: https://shiftyhabits.com/about/
+- Developer page on Google Play: https://play.google.com/store/apps/developer?id=Luke@ShiftyHabits
 - Privacy policy: https://shiftyhabits.com/privacy/
 - Community: https://www.facebook.com/groups/1382021267240330/
 - Contact: ShiftyHabits@gmail.com

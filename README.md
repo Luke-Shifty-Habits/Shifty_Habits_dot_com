@@ -20,6 +20,7 @@ what you see is what ships.
 index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
 privacy/        the app's privacy policy, linked from the app and Play Console
+about/          the author page every guide byline links to (Person JSON-LD, @id …/about/#luke)
 styles.css      all styling; dark-only (see "Light mode"), custom properties at the top
 favicon.ico     the app icon at 16/32/48px, for browser tabs and Google's search results
 site.webmanifest  names the 192/512px icons for Android's "Add to home screen"
@@ -33,6 +34,14 @@ llms.txt        a plain-language summary for AI assistants (llmstxt.org conventi
 
 Each guide lives at `guides/<slug>/index.html` rather than `guides/<slug>.html`, so
 the served URL is `/guides/<slug>/` with no extension.
+
+**Every guide credits Luke the same way**: the byline and the author note link
+to `about/`, and the Article JSON-LD `author` carries `"@id":
+"https://shiftyhabits.com/about/#luke"` plus the Play developer page and LinkedIn in `sameAs`.
+Copy an existing guide's head and foot to keep that intact. Health claims
+(sleep, light, caffeine) should link a published source inline and in a
+`Sources` section, mirrored in the Article's `citation` array; the night shift
+guide is the worked example.
 
 **A new guide has to be added in four places**, or it is invisible: the
 `guides/` hub list, the landing page's `#guides` section, `sitemap.xml`, and

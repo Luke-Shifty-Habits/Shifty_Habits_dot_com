@@ -37,7 +37,7 @@ the served URL is `/guides/<slug>/` with no extension.
 
 **Every guide credits Luke the same way**: the byline and the author note link
 to `about/`, and the Article JSON-LD `author` carries `"@id":
-"https://shiftyhabits.com/about/#luke"` plus the Play developer page in `sameAs`.
+"https://shiftyhabits.com/about/#luke"` plus the Play developer page and LinkedIn in `sameAs`.
 Copy an existing guide's head and foot to keep that intact. Health claims
 (sleep, light, caffeine) should link a published source inline and in a
 `Sources` section, mirrored in the Article's `citation` array; the night shift

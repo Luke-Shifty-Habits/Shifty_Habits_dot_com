@@ -38,7 +38,13 @@ the served URL is `/guides/<slug>/` with no extension.
 **Every guide credits Luke the same way**: the byline and the author note link
 to `about/`, and the Article JSON-LD `author` carries `"@id":
 "https://shiftyhabits.com/about/#luke"` plus the Play developer page and LinkedIn in `sameAs`.
-Copy an existing guide's head and foot to keep that intact. Health claims
+Copy an existing guide's head and foot to keep that intact.
+
+**Dates move together.** When a guide's content changes, update three things to
+the same day: the Article's `dateModified`, the visible "Updated" date in the
+byline (`<time datetime>` and its text), and the page's `<lastmod>` in
+`sitemap.xml`. A visible date that disagrees with the markup is worse than none.
+Changes to the shared header, footer or author credit don't count. Health claims
 (sleep, light, caffeine) should link a published source inline and in a
 `Sources` section, mirrored in the Article's `citation` array; the night shift
 guide is the worked example.

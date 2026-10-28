@@ -653,8 +653,8 @@ button:focus-visible {
 
 /* Byline. Google's guidance on who wrote a page is about what a reader can
    see, not only what the markup claims, so the name appears on the page as
-   well as in the Article JSON-LD. No visible date: these are reference pages
-   rather than news, and a date stamp only makes them look stale later. */
+   well as in the Article JSON-LD. The same goes for the date: the visible
+   "Updated" date is the Article's dateModified, and the two move together. */
 .byline {
   font-size: 14px;
   color: var(--text-faint);
@@ -662,6 +662,7 @@ button:focus-visible {
 }
 
 .byline strong { color: var(--text-dim); font-weight: 700; }
+.byline-date { display: block; margin-top: 4px; }
 
 .author-note {
   display: flex;

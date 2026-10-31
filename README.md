@@ -44,7 +44,10 @@ Copy an existing guide's head and foot to keep that intact.
 the same day: the Article's `dateModified`, the visible "Updated" date in the
 byline (`<time datetime>` and its text), and the page's `<lastmod>` in
 `sitemap.xml`. A visible date that disagrees with the markup is worse than none.
-Changes to the shared header, footer or author credit don't count. Health claims
+Changes to the shared header, footer or author credit don't count.
+The About page's `ProfilePage` dates are the exception to plain `YYYY-MM-DD`:
+Google rejects a date there without a time, so they carry
+`T00:00:00+00:00`. Article dates on the guides are fine as dates. Health claims
 (sleep, light, caffeine) should link a published source inline and in a
 `Sources` section, mirrored in the Article's `citation` array; the night shift
 guide is the worked example.

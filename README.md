@@ -20,6 +20,7 @@ what you see is what ships.
 index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
 privacy/        the app's privacy policy, linked from the app and Play Console
+terms/          the app's terms of service, the URL registered in Play Console
 about/          the author page every guide byline links to (Person JSON-LD, @id …/about/#luke)
 styles.css      all styling; dark-only (see "Light mode"), custom properties at the top
 favicon.ico     the app icon at 16/32/48px, for browser tabs and Google's search results
@@ -98,6 +99,15 @@ so edit them in the same pass.
 
 App builds released before the move still open the Google Doc and can't be
 updated, so that document must stay shared. It now just points here.
+
+## The terms of service
+
+`terms/index.html` is the app's terms of service, the URL given to Play Console
+(trader status). It names Luke as a sole trader in Tasmania and Tasmanian law,
+and keeps the Australian Consumer Law guarantee wording. Like the privacy
+policy, it describes what the app does (Pro as a one-off Play purchase, the
+launch promotion, backups, Sleep Mode, calendar sync), so update it and its
+"Last updated" date when any of that changes.
 
 ## Light mode: there isn't one
 

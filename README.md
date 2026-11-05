@@ -38,7 +38,7 @@ the served URL is `/guides/<slug>/` with no extension.
 
 **Every guide credits Luke the same way**: the byline and the author note link
 to `about/`, and the Article JSON-LD `author` carries `"@id":
-"https://shiftyhabits.com/about/#luke"` plus the Play developer page, LinkedIn and YouTube in `sameAs`.
+"https://shiftyhabits.com/about/#luke"` plus the Play developer page and LinkedIn in `sameAs`.
 Copy an existing guide's head and foot to keep that intact.
 
 **Dates move together.** When a guide's content changes, update three things to

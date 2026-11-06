@@ -12,8 +12,10 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 - **Streaks skip days a habit does not apply to.** A rostered day off, a non-matching shift type, or a day that has not happened yet is stepped over rather than counted as a miss.
 - **Scores can be filtered to one shift type.** A habit's history and score can be narrowed to nights alone or days alone, rather than reporting one blended number.
 - **Sleep Mode (Pro, Android 10+).** A Do Not Disturb mode of the app's own for sleeping after a shift: starred contacts (or whoever the user picks) and repeat callers still ring through so work can call someone in, volumes are set for sleep and restored afterwards, and it ends itself at a chosen time. Each shift type can carry a sleep window anchored to the shift (for example, eight hours starting an hour after a night ends), so Sleep Mode switches on by itself as the roster moves. The user's own Do Not Disturb settings are never changed.
-- **Reminders timed to the shift or to bedtime.** A reminder can be set relative to shift start, shift end, or bedtime, which the app works out from the roster (the Sleep Mode window where one is set, otherwise from when the next shift starts). An optional End Shift button (Settings, End Shift) makes end-of-shift reminders wait until the user taps End Shift on the notification, for shifts that run over.
-- **A sample preview.** A new install opens on a sample roster with months of history to look around before setting anything up; "Set up my own" leaves it, and none of the sample data carries over.
+- **Habits timed to the shift.** A habit's time, and its reminder, can be set relative to leaving for work, shift start, a break, shift end, getting home, or bedtime. Leaving and getting home come from a travel time (one setting, or per shift type) and breaks from the breaks given to a shift type; bedtime the app works out from the roster (the Sleep Mode window where one is set, otherwise from when the next shift starts). An optional End Shift button (Settings, End Shift) makes end-of-shift reminders wait until the user taps End Shift on the notification, for shifts that run over.
+- **Calendar sync (Pro).** Adds the next two weeks of shifts, habit commitment times and sleep windows to a calendar on the phone that the user picks; choosing a Google account's calendar puts them in Google Calendar on the web and other devices. Done through Android's calendar provider, with no Google sign-in; the app only changes the events it added and updates them as the roster changes.
+- **A shift countdown.** Today shows how long until the current shift ends or, between shifts, until the next one starts; it can be turned off in Settings.
+- **A guided setup.** A new install goes through a short setup (what is hardest about shift work, the roster, a few starter habits, and when each one happens), followed by a quick tour.
 - **Day notes tagged to habits.** A note on a day can be tagged to habits with #, and tagged notes appear as markers on that habit's graph.
 - **Milestone celebrations.** Streaks are celebrated at 10, 30, 100 and 365 days and consistency at 60, 70, 80 and 90 percent; a streak that is lost and rebuilt is celebrated again.
 - **Per-shift suggestions.** When a habit keeps slipping on one shift type while going well on the others, its page points it out and can make a separate version of the habit for that shift.
@@ -29,6 +31,7 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 - In the UK, the EEA and Switzerland the app asks once on first launch and collects nothing until the user agrees; declining or dismissing leaves it off. Elsewhere diagnostics are on by default and can be turned off at any time in Settings, Privacy. Which applies is decided from the device's own time zone — the app never looks up the user's location.
 - Users can export and restore their own data themselves.
 - Sleep Mode needs Android's Do Not Disturb access, used only to switch its own Do Not Disturb mode and volumes. The app never reads contacts or call history; Android applies the caller rules itself.
+- Calendar sync (off unless turned on) needs Android's calendar access: it lists the phone's calendars and writes the app's own events into the one the user picks. The app sends nothing itself; if that calendar belongs to an account such as Google, the account syncs the events as it would any other.
 
 ## Availability and pricing
 
@@ -37,7 +40,7 @@ Shifty Habits exists because mainstream habit trackers assume a fixed Monday-to-
 - If it is unavailable in a given country, the developer asks to be emailed at ShiftyHabits@gmail.com with the country, which informs the rollout order.
 - The app ships in twelve languages, most of them machine-translated and not yet reviewed by native speakers. Corrections are actively wanted at ShiftyHabits@gmail.com and can be made one phrase at a time.
 - Free, with no limit on the number of habits. Backup and restore are free.
-- An optional one-off paid upgrade (Pro) adds a longer history window, alternate scoring models, a streak-over-time overlay, more than one active roster cycle, restoring deleted habits, and Sleep Mode.
+- An optional one-off paid upgrade (Pro) adds a longer history window, alternate scoring models, a streak-over-time overlay, more than one active roster cycle, restoring deleted habits, Sleep Mode, and calendar sync.
 - Launch promotion: until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before that date keeps Pro permanently, with no purchase.
 
 ## Who it is for

@@ -709,3 +709,105 @@ button:focus-visible {
 @media (max-width: 860px) {
   .help-grid { grid-template-columns: 1fr; }
 }
+
+/* "One habit, three shifts" — the app's welcome-screen example, after the hero.
+   Shift colours are the app's Early/Afternoon/Night presets. */
+.one-habit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.one-habit-copy h2 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.accent-amber { color: #ff8a3d; }
+
+.one-habit-copy p { color: var(--text-dim); font-size: 17px; margin: 0; max-width: 46ch; }
+
+.one-habit-card {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+}
+
+.one-habit-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.one-habit-card .tick {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2.5px solid #4A90E2;
+  flex-shrink: 0;
+}
+
+.one-habit-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+
+.one-habit-card li { display: flex; align-items: center; gap: 10px; }
+
+.one-habit-card .shift {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.one-habit-card .shift b { font-size: 17px; }
+.one-habit-card .shift-early { background: #4A90E2; }
+.one-habit-card .shift-afternoon { background: #E2874A; }
+.one-habit-card .shift-night { background: #9B4AE2; }
+
+.one-habit-card .arrow { color: var(--text-faint); }
+
+.one-habit-card .bell {
+  width: 104px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+  background: #1a2a3d;
+  border: 1px solid #2d4a6e;
+  border-radius: 12px;
+  padding: 10px 8px;
+}
+
+.one-habit-card .bell::before { content: "🔔 "; font-size: 14px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .one-habit { grid-template-columns: 1fr; text-align: center; }
+  .one-habit-copy p { margin: 0 auto; }
+}
+
+@media (max-width: 420px) {
+  .one-habit-card .shift { flex-direction: column; align-items: flex-start; gap: 0; }
+}

@@ -811,3 +811,341 @@ button:focus-visible {
 @media (max-width: 420px) {
   .one-habit-card .shift { flex-direction: column; align-items: flex-start; gap: 0; }
 }
+
+/* ---------------------------------------------------------------------------
+   Roster calendar (roster/). The only page with a script; everything below is
+   either the builder's controls or the twelve month grids roster.js draws.
+   Shift cells get their colour from the shift type, set by the script. */
+
+[hidden] { display: none !important; }
+
+.roster-head { padding-top: 48px; }
+
+.roster-head h1 {
+  font-size: clamp(28px, 4.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.roster-head .standfirst {
+  font-size: 18px;
+  color: var(--text-dim);
+  margin: 0 0 32px;
+  max-width: 62ch;
+}
+
+.roster-noscript {
+  color: var(--text-dim);
+  padding-bottom: 32px;
+}
+
+.planner {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.planner.viewing { grid-template-columns: 1fr; }
+
+.roster-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  min-width: 0;
+}
+
+.roster-card h2 { font-size: 19px; margin: 0 0 6px; }
+.roster-card h3 { font-size: 15px; margin: 22px 0 4px; }
+.builder h2 + .hint { margin-top: 0; }
+.builder h2:not(:first-child) { margin-top: 28px; }
+
+.hint {
+  color: var(--text-faint);
+  font-size: 13.5px;
+  margin: 0 0 12px;
+}
+
+.btn-small { padding: 8px 14px; font-size: 13.5px; }
+button.btn { cursor: pointer; font-family: inherit; background-color: transparent; }
+button.btn-primary { background: linear-gradient(135deg, var(--red), var(--purple)); }
+button.btn:disabled { opacity: 0.4; cursor: default; }
+
+.chips, .brushes { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.chip, .brush {
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-dim);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 12px;
+  min-height: 36px;
+  cursor: pointer;
+}
+
+.chip:hover, .brush:hover { border-color: var(--text-faint); color: var(--text); }
+
+.brush { display: inline-flex; align-items: center; gap: 7px; }
+.brush[aria-pressed="true"] { border-color: var(--teal); color: var(--text); background: rgba(47, 214, 168, 0.1); }
+
+.brush-dot, .legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.types { display: grid; gap: 8px; margin-bottom: 10px; }
+
+.type-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  gap: 6px 8px;
+  align-items: center;
+}
+
+.swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.roster-page input[type="text"],
+.roster-page input[type="time"],
+.roster-page input[type="date"],
+.roster-page select {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 7px 9px;
+  min-height: 36px;
+  min-width: 0;
+  color-scheme: dark;
+}
+
+.roster-page input:focus-visible,
+.roster-page select:focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; }
+
+.type-name { width: 100%; }
+.type-times { display: flex; align-items: center; gap: 6px; grid-column: 2 / 3; grid-row: 2; }
+.type-time { flex: 1; }
+.dash { color: var(--text-faint); }
+
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text-faint);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.icon-btn:hover:not(:disabled) { color: var(--red); border-color: var(--border); }
+.icon-btn:disabled { opacity: 0.3; cursor: default; }
+
+.cycle-length { color: var(--text-faint); font-weight: 400; font-size: 13.5px; margin-left: 6px; }
+
+.cycle {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin: 12px 0 10px;
+}
+
+.cycle-day {
+  aspect-ratio: 1;
+  min-height: 40px;
+  border-radius: 8px;
+  border: 0;
+  font: inherit;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cycle-num { font-size: 10px; opacity: 0.75; line-height: 1.1; }
+.cycle-code { font-size: 14px; font-weight: 800; line-height: 1.1; }
+
+/* Off: the same quiet tile the guides draw their patterns with. */
+.cycle-day.off, .brush-dot.off, .legend-dot.off, .month td.off {
+  background: #2a3350;
+  color: var(--text-faint);
+}
+
+.row-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.fields { display: grid; gap: 14px; }
+.field { display: grid; gap: 6px; font-size: 13.5px; color: var(--text-dim); }
+.field em { color: var(--text-faint); font-style: normal; }
+.field-row { display: flex; gap: 8px; align-items: center; }
+.field-row input { flex: 1; }
+
+.calendar-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.eyebrow-small {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.calendar h2 { font-size: 22px; overflow-wrap: anywhere; }
+.today-line { margin: 4px 0 0; color: var(--text-dim); font-size: 15px; }
+.today-line strong { color: var(--text); }
+.next-line { margin: 2px 0 0; color: var(--text-faint); font-size: 14px; }
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+
+.legend li { display: inline-flex; align-items: center; gap: 7px; }
+.legend-count { color: var(--text-faint); }
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.range { font-weight: 700; font-size: 14.5px; min-width: 150px; text-align: center; }
+
+.week-start {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-faint);
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px 16px;
+}
+
+.month {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+  table-layout: fixed;
+}
+
+.month caption {
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0 3px 4px;
+}
+
+.month th {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  padding: 2px 0;
+}
+
+.month td {
+  height: 30px;
+  border-radius: 6px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  line-height: 1;
+  position: relative;
+}
+
+.month td.pad { background: none; }
+.month .num { font-size: 12px; font-weight: 600; display: block; }
+.month .code { font-size: 9px; font-weight: 800; opacity: 0.8; display: block; margin-top: 1px; }
+.month td.today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--teal); }
+
+.share-card { grid-column: 1 / -1; }
+
+.share-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.share-row input { flex: 1 1 260px; font-size: 13px; color: var(--text-dim); }
+.share-status { margin: 8px 0 0; min-height: 1.4em; font-size: 13.5px; color: var(--teal); }
+
+.roster-cta {
+  margin: 40px 0 0;
+  padding: 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(239, 68, 89, 0.08), rgba(155, 93, 229, 0.08));
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roster-cta h2 { margin: 0 0 8px; font-size: 21px; }
+.roster-cta p { margin: 0; color: var(--text-dim); max-width: 62ch; }
+
+.roster-faq { padding: 56px 24px 64px; }
+.roster-faq > h2 { max-width: 780px; margin: 0 auto 18px; font-size: 24px; }
+
+@media (max-width: 900px) {
+  .planner { grid-template-columns: 1fr; }
+  .roster-cta { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .wrap.planner { padding: 0 12px; }
+  .roster-card { padding: 16px; }
+  .week-start { margin-left: 0; }
+  .months { grid-template-columns: 1fr 1fr; gap: 14px 8px; }
+  .month { border-spacing: 2px; }
+  .month td { height: 24px; border-radius: 4px; }
+  .month .num { font-size: 10.5px; }
+  .month .code { display: none; }
+  .month caption { font-size: 13px; }
+}
+
+/* Print: just the roster, in colour, three months across. */
+@media print {
+  header.site, footer.site, .skip-link, .roster-head, #viewing-note,
+  .builder, .share-card, .roster-cta, .roster-faq, .calendar-nav, #edit, #next { display: none !important; }
+  body { background: #ffffff; color: #000000; }
+  .planner { display: block; padding: 0; }
+  .roster-card { border: 0; padding: 0; background: none; }
+  .calendar h2 { font-size: 20px; }
+  .today-line, .legend { color: #333333; }
+  .today-line strong { color: #000000; }
+  .months { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .month caption, .month th { color: #000000; }
+  .month { break-inside: avoid; }
+  .month td, .legend-dot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .month td.off, .legend-dot.off { background: #e6e8ef; color: #555555; }
+  .month td.today { box-shadow: none; outline: 2px solid #000000; }
+}

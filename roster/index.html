@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The one page with a script: roster.js, same-origin, nothing inline. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0e1a">
+
+<title>Shift Roster Calendar: See Your Shift Pattern for the Year</title>
+<meta name="description" content="Free shift roster calendar. Pick your pattern (4-on-4-off, Panama, DuPont, continental or your own) and see every shift for the year. No sign-up.">
+<link rel="canonical" href="https://shiftyhabits.com/roster/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shifty Habits">
+<meta property="og:url" content="https://shiftyhabits.com/roster/">
+<meta property="og:title" content="Shift roster calendar">
+<meta property="og:description" content="Build your shift pattern, see a year of shifts, and share it as a link. Free, no sign-up, nothing leaves your browser.">
+<meta property="og:image" content="https://shiftyhabits.com/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shiftyhabits.com/images/og-card.jpg">
+
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css">
+<script src="roster.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Shift roster calendar",
+  "url": "https://shiftyhabits.com/roster/",
+  "description": "A free shift roster calendar: build a repeating shift pattern such as 4-on-4-off, Panama 2-2-3, DuPont or a continental rotation, see every shift for the year, and share it as a link. Runs entirely in the browser with no account.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shiftyhabits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Roster calendar",
+      "item": "https://shiftyhabits.com/roster/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make a calendar of my shift roster?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick the pattern closest to yours, such as 4-on-4-off, Panama 2-2-3, DuPont or 2 earlies, 2 lates, 2 nights, 4 off, then tap any day of the cycle to change it. Set the date day 1 of your cycle falls on, and the calendar fills in every shift for the next twelve months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my roster saved or sent anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The calendar is worked out in your browser. Your roster is kept in the page address after the # sign, which browsers never send to a website, and in your browser's own storage so it is there when you come back. There is no account and nothing is stored on a server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I share my roster with my partner or family?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copy the share link and send it. The link holds the whole roster, so whoever opens it sees the same calendar, on a phone or a computer, without signing up. Anyone with the link can see the roster, so send it only to people you want to have it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I print my roster?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Print button prints the twelve months in colour, without the rest of the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get my roster into the Shifty Habits app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The app's cycle builder has the same patterns, so you can build the same roster there in a minute during setup. The app then ties your habits and reminders to each shift type, so they follow the roster automatically. It is free on Google Play for Android."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Shifty Habits
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../guides/">Guides</a>
+      <a href="./" aria-current="page">Roster calendar</a>
+      <a href="../#solution">How it works</a>
+      <a href="../#privacy">Privacy</a>
+      <a href="../#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+  </div>
+</header>
+
+<main id="main" class="roster-page">
+
+  <div class="wrap roster-head">
+    <p class="breadcrumb"><a href="../">Home</a><span>/</span>Roster calendar</p>
+    <h1>Shift roster calendar</h1>
+    <p class="standfirst">Pick your pattern, set the day it starts, and see every shift for the year. Share it with a link, or print it for the fridge. No sign-up, and your roster never leaves your browser.</p>
+  </div>
+
+  <p id="noscript-note" class="wrap roster-noscript">The roster calendar needs JavaScript turned on. Everything else on this site works without it.</p>
+
+  <div id="planner" class="wrap planner" hidden>
+
+    <section id="builder" class="roster-card builder" aria-labelledby="builder-title">
+      <h2 id="builder-title">1. Your pattern</h2>
+      <p class="hint">Start from a common rotation, then change anything that doesn't match yours.</p>
+      <div id="presets" class="chips" role="group" aria-label="Common patterns"></div>
+
+      <h3>Shift types</h3>
+      <p class="hint">Tap the colour to change it. Days off don't need a type.</p>
+      <div id="types" class="types"></div>
+      <button id="add-type" class="btn btn-ghost btn-small" type="button">+ Add a shift type</button>
+
+      <h3>The cycle <span id="cycle-length" class="cycle-length"></span></h3>
+      <p class="hint">Choose a shift below, then tap days in the cycle to set them.</p>
+      <div id="brushes" class="brushes" role="group" aria-label="Shift to set"></div>
+      <div id="cycle" class="cycle"></div>
+      <div class="row-actions">
+        <button id="add-day" class="btn btn-ghost btn-small" type="button">+ Add a day</button>
+        <button id="remove-day" class="btn btn-ghost btn-small" type="button">− Remove last day</button>
+      </div>
+
+      <h2>2. When it starts</h2>
+      <div class="fields">
+        <label class="field">
+          <span>Day 1 of the cycle falls on</span>
+          <span class="field-row">
+            <input id="start-date" type="date" required>
+            <button id="start-today" class="btn btn-ghost btn-small" type="button">Today</button>
+          </span>
+        </label>
+        <label class="field">
+          <span>Roster name <em>(optional, shown on the shared link)</em></span>
+          <input id="roster-name" type="text" maxlength="40" placeholder="e.g. B shift">
+        </label>
+      </div>
+    </section>
+
+    <section class="roster-card calendar" aria-labelledby="roster-title">
+      <div class="calendar-head">
+        <div>
+          <p id="viewing-note" class="eyebrow-small" hidden>Shared roster</p>
+          <h2 id="roster-title">Your roster</h2>
+          <p id="today" class="today-line"></p>
+          <p id="next" class="next-line"></p>
+        </div>
+        <button id="edit" class="btn btn-ghost btn-small" type="button" hidden>Edit this roster</button>
+      </div>
+
+      <ul id="legend" class="legend"></ul>
+
+      <div class="calendar-nav">
+        <button id="prev" class="btn btn-ghost btn-small" type="button" aria-label="Previous twelve months">←</button>
+        <span id="range" class="range" aria-live="polite"></span>
+        <button id="next-year" class="btn btn-ghost btn-small" type="button" aria-label="Next twelve months">→</button>
+        <label class="week-start">
+          <span>Week starts</span>
+          <select id="week-start">
+            <option value="1">Monday</option>
+            <option value="0">Sunday</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="months" class="months"></div>
+    </section>
+
+    <section class="roster-card share-card" aria-labelledby="share-title">
+      <h2 id="share-title">Share or print</h2>
+      <p class="hint">The link holds the whole roster, so anyone you send it to sees this calendar on any phone or computer, without signing up. Nothing is stored on our side. Anyone with the link can see it.</p>
+      <div class="share-row">
+        <input id="share-url" type="text" readonly aria-label="Share link">
+        <button id="copy" class="btn btn-primary btn-small" type="button">Copy link</button>
+        <button id="share" class="btn btn-ghost btn-small" type="button" hidden>Share…</button>
+        <button id="print" class="btn btn-ghost btn-small" type="button">Print</button>
+      </div>
+      <p id="share-status" class="share-status" role="status"></p>
+    </section>
+
+  </div>
+
+  <div class="wrap">
+    <div class="roster-cta">
+      <div>
+        <h2>Habits that follow this roster</h2>
+        <p>Shifty Habits is a habit tracker built on your roster rather than the week. Give it the same pattern and your habits and reminders follow each shift type: the gym on days off, meal prep before nights, a wind-down after them. Days off never break a work-day streak. Free for Android.</p>
+      </div>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it free on Google Play</a>
+    </div>
+  </div>
+
+  <div class="wrap roster-faq">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+
+      <div class="faq-item">
+        <h3>How do I make a calendar of my shift roster?</h3>
+        <p>Pick the pattern closest to yours, such as 4-on-4-off, Panama 2-2-3, DuPont or 2 earlies, 2 lates, 2 nights, 4 off, then tap any day of the cycle to change it. Set the date day 1 of your cycle falls on, and the calendar fills in every shift for the next twelve months.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my roster saved or sent anywhere?</h3>
+        <p>No. The calendar is worked out in your browser. Your roster is kept in the page address after the # sign, which browsers never send to a website, and in your browser's own storage so it is there when you come back. There is no account and nothing is stored on a server.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I share my roster with my partner or family?</h3>
+        <p>Copy the share link and send it. The link holds the whole roster, so whoever opens it sees the same calendar, on a phone or a computer, without signing up. Anyone with the link can see the roster, so send it only to people you want to have it.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I print my roster?</h3>
+        <p>Yes. The Print button prints the twelve months in colour, without the rest of the page.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I get my roster into the Shifty Habits app?</h3>
+        <p>The app's cycle builder has the same patterns, so you can build the same roster there in a minute during setup. The app then ties your habits and reminders to each shift type, so they follow the roster automatically. It is free on Google Play for Android.</p>
+      </div>
+
+    </div>
+    <p class="section-foot">How the patterns compare: <a href="../guides/shift-rotation-patterns/">common shift rotation patterns explained</a>.</p>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Shifty Habits</span>
+    <span class="footer-links">
+      <a href="../">Home</a>
+      <a href="../guides/">Guides</a>
+      <a href="./">Roster calendar</a>
+      <a href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Google Play</a>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="mailto:ShiftyHabits@gmail.com">Contact</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

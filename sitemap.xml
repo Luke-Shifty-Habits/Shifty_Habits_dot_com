@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shiftyhabits.com/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -25,6 +25,60 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://shiftyhabits.com/roster/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/4-on-4-off/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/4-days-4-nights/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/continental/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/panama/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/dupont/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/2-on-2-off/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/3-on-3-off/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shiftyhabits.com/roster/7-on-7-off/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shiftyhabits.com/guides/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -44,7 +98,7 @@
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/shift-rotation-patterns/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -98,7 +152,7 @@
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/habits-on-4-on-4-off-roster/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -110,13 +164,13 @@
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/panama-shift-pattern/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shiftyhabits.com/guides/continental-shift-pattern/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

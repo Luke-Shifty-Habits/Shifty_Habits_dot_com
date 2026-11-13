@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- A roster pattern page: crawlable text about one pattern, plus the shared
+     planner that ../roster.js draws into #planner-root, opened on data-preset. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0e1a">
+
+<title>3 On 3 Off Shift Calendar: Your Roster for the Year</title>
+<meta name="description" content="Free 3-on-3-off roster calendar. Set the day your cycle starts and see every shift and day off for the next twelve months. No sign-up.">
+<link rel="canonical" href="https://shiftyhabits.com/roster/3-on-3-off/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shifty Habits">
+<meta property="og:url" content="https://shiftyhabits.com/roster/3-on-3-off/">
+<meta property="og:title" content="3-on-3-off shift calendar">
+<meta property="og:description" content="A 3-on-3-off roster is a six-day cycle: three shifts, then three days off. With 12-hour shifts it averages 42 hours a week, and the cycle moves one weekday earlier each week, repeating on the same weekdays every six weeks.">
+<meta property="og:image" content="https://shiftyhabits.com/images/og-roster-3-on-3-off.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="3-on-3-off shift calendar: a year calendar of the pattern">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shiftyhabits.com/images/og-roster-3-on-3-off.jpg">
+
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../roster.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://shiftyhabits.com/roster/3-on-3-off/",
+  "url": "https://shiftyhabits.com/roster/3-on-3-off/",
+  "name": "3-on-3-off shift calendar",
+  "description": "Free 3-on-3-off roster calendar. Set the day your cycle starts and see every shift and day off for the next twelve months. No sign-up.",
+  "about": {
+    "@type": "Thing",
+    "name": "3-on-3-off shift pattern"
+  },
+  "primaryImageOfPage": "https://shiftyhabits.com/images/og-roster-3-on-3-off.jpg",
+  "image": "https://shiftyhabits.com/images/og-roster-3-on-3-off.jpg",
+  "datePublished": "2026-11-13",
+  "dateModified": "2026-11-13",
+  "author": {
+    "@type": "Person",
+    "@id": "https://shiftyhabits.com/about/#luke",
+    "name": "Luke Briggs",
+    "url": "https://shiftyhabits.com/about/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  },
+  "relatedLink": [
+    "https://shiftyhabits.com/roster/"
+  ],
+  "mainEntity": {
+    "@id": "https://shiftyhabits.com/roster/#webapp"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shiftyhabits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Roster calendar",
+      "item": "https://shiftyhabits.com/roster/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "3-on-3-off",
+      "item": "https://shiftyhabits.com/roster/3-on-3-off/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does a 3-on-3-off roster work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You work three shifts, then have three days off, and the six-day cycle repeats. With 12-hour shifts that averages 42 hours a week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do 3-on-3-off days off fall on the same days each week?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A six-day cycle starts one weekday earlier each week, so it only lines up with the same weekdays again every six weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I see my 3-on-3-off roster on a calendar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the calendar on this page, set the date of your first shift as day 1, and it shows every shift and day off for the next twelve months. You can share it as a link or print it."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../../">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Shifty Habits
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../../guides/">Guides</a>
+      <a href="../">Roster calendar</a>
+      <a href="../../#solution">How it works</a>
+      <a href="../../#privacy">Privacy</a>
+      <a href="../../#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+  </div>
+</header>
+
+<main id="main" class="roster-page">
+
+  <div class="wrap roster-head">
+    <p class="breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Roster calendar</a><span>/</span>3-on-3-off</p>
+    <h1>3-on-3-off shift calendar</h1>
+    <p class="standfirst">Three shifts, three days off, repeat. Set the day your cycle starts and see every shift for the year.</p>
+    <div class="answer-box">
+      <p><strong>The short answer:</strong> A 3-on-3-off roster is a <strong>six-day cycle</strong>: three shifts, then three days off. With 12-hour shifts it averages <strong>42 hours a week</strong>, and the cycle moves one weekday earlier each week, repeating on the same weekdays every six weeks.</p>
+    </div>
+  </div>
+
+  <p id="noscript-note" class="wrap roster-noscript">The calendar needs JavaScript turned on. The pattern is described below.</p>
+
+  <div id="planner-root" data-preset="3-on-3-off"></div>
+
+  <div class="wrap roster-about">
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">The 3-on-3-off pattern</h2>
+      <p class="hint">One full cycle, one square per day: D day shift, N night shift, – day off.</p>
+      <div class="pattern">
+        <span class="d">D</span><span class="d">D</span><span class="d">D</span><span class="o">–</span><span class="o">–</span><span class="o">–</span>
+      </div>
+      <div class="table-scroll">
+      <table class="pattern-facts">
+        <tbody>
+          <tr><th>Cycle length</th><td>6 days</td></tr>
+          <tr><th>Shift length</th><td>usually 12 hours</td></tr>
+          <tr><th>Average week</th><td>42 hours with 12-hour shifts</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Three 12-hour shifts in a row is a long block, but three days off gives a real break after each one.</p>
+
+      <p>Some sites alternate a block of days with a block of nights, a 12-day cycle. Add a night shift type and paint the second block in the cycle builder.</p>
+
+      <p>More on this pattern: <a href="../../guides/shift-rotation-patterns/">Common shift rotation patterns explained</a>.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <div class="roster-cta">
+      <div>
+        <h2>Habits that follow your 3-on-3-off roster</h2>
+        <p>Shifty Habits is a habit tracker built on your roster rather than the week. Set up your 3-on-3-off cycle once and your habits and reminders follow each shift type, so the gym lands on days off and a wind-down follows nights. Days off never break a work-day streak. Free for Android.</p>
+      </div>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it free on Google Play</a>
+    </div>
+  </div>
+
+  <div class="wrap roster-faq">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+
+      <div class="faq-item">
+        <h3>How does a 3-on-3-off roster work?</h3>
+        <p>You work three shifts, then have three days off, and the six-day cycle repeats. With 12-hour shifts that averages 42 hours a week.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do 3-on-3-off days off fall on the same days each week?</h3>
+        <p>No. A six-day cycle starts one weekday earlier each week, so it only lines up with the same weekdays again every six weeks.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I see my 3-on-3-off roster on a calendar?</h3>
+        <p>Open the calendar on this page, set the date of your first shift as day 1, and it shows every shift and day off for the next twelve months. You can share it as a link or print it.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wrap roster-others">
+    <h2>Other shift patterns</h2>
+    <ul class="pattern-links">
+      <li><a href="../4-on-4-off/">4-on-4-off <span>8-day cycle</span></a></li>
+      <li><a href="../4-days-4-nights/">4 days, 4 nights <span>16-day cycle</span></a></li>
+      <li><a href="../continental/">Continental (2-2-4) <span>8-day cycle</span></a></li>
+      <li><a href="../panama/">Panama (2-2-3) <span>14-day cycle</span></a></li>
+      <li><a href="../dupont/">DuPont <span>28-day cycle</span></a></li>
+      <li><a href="../2-on-2-off/">2-on-2-off <span>4-day cycle</span></a></li>
+      <li><a href="../7-on-7-off/">7-on-7-off <span>14-day cycle</span></a></li>
+      <li><a href="../">Build your own <span>any cycle up to 84 days</span></a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Shifty Habits</span>
+    <span class="footer-links">
+      <a href="../../">Home</a>
+      <a href="../../guides/">Guides</a>
+      <a href="../">Roster calendar</a>
+      <a href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Google Play</a>
+      <a href="../../about/">About</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../terms/">Terms</a>
+      <a href="mailto:ShiftyHabits@gmail.com">Contact</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

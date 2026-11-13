@@ -12,13 +12,16 @@ ShiftyHabits@gmail.com, not in this issue tracker.
 
 ## What's here
 
-Hand-written static HTML and CSS. There is no build step, no framework, no
-package manager and no JavaScript at all — open `index.html` in a browser and
-what you see is what ships.
+Hand-written static HTML and CSS. There is no build step, no framework and no
+package manager — open `index.html` in a browser and what you see is what
+ships. The one exception to "no JavaScript" is the roster calendar (`roster/`),
+a hand-written script with no dependencies; every other page has none.
 
 ```
 index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
+roster/         the free roster calendar: index.html, roster.js, and one page per common
+                pattern (roster/<pattern>/), see "The roster calendar"
 privacy/        the app's privacy policy, linked from the app and Play Console
 terms/          the app's terms of service, the URL registered in Play Console
 about/          the author page every guide byline links to (Person JSON-LD, @id …/about/#luke)
@@ -82,6 +85,59 @@ from the new icon and swap them in:
 The source icon is a full square with black corners outside the rounded tile and
 no transparency. Every size except the Apple one gets a rounded mask, radius
 about 20% of the width, so those corners don't show as black.
+
+## The roster calendar
+
+`roster/` builds a repeating shift cycle in the browser, draws twelve months of
+it, and shares it as a link. It exists to bring people in from searches like
+"4 on 4 off calendar" and hand them on to the app. Its styles are the last
+block of `styles.css`; its script is `roster/roster.js`, plain ES5-ish with no
+library, loaded with `defer`.
+
+- **Nothing is sent anywhere.** The roster lives in the URL's `#fragment`,
+  which browsers never send to a server, and in `localStorage` (`roster.v1`,
+  plus `roster.weekStart`) so it's there next visit. The page's FAQ and
+  `llms.txt` say so; keep it true. No analytics, no third-party requests.
+- **The link format is a contract with the app**, which will import it (open
+  in app / install referrer) and generate it (share a roster). It is
+  documented at the top of `roster.js`: `#v=1&n=…&s=YYYY-MM-DD&t=…&c=…`.
+  Change it only by adding a `v=2` and keeping `v=1` parsing, since links
+  already sent can't be updated.
+- **A link is untrusted input.** Names only reach the page as `textContent`,
+  colours are matched against a hex pattern, numbers are range-checked, and a
+  link that fails any check is ignored. Keep it that way: no `innerHTML`.
+- **`#preset=<id>`** opens the builder on a preset rather than a full roster;
+  the pattern guides link that way. Ids are in `PRESETS` in `roster.js`, which
+  mirrors the app's `ROTATION_PRESETS` (`app/cycle.tsx`). Renaming an id breaks
+  guide links.
+- A link opened on the browser that made it opens for editing; anyone else's
+  opens as a read-only calendar with an "Edit this roster" button.
+- Print styles at the end of `styles.css` print just the twelve months in colour.
+
+**Pattern pages.** `roster/<slug>/` (4-on-4-off, 4-days-4-nights, continental,
+panama, dupont, 2-on-2-off, 3-on-3-off, 7-on-7-off) each target one search
+("panama shift calendar"). Addresses that differ only after `#` are one page to
+a search engine, so a preset needs its own directory to be found. Each page is
+plain HTML: an answer box, the pattern drawn with the guides' `.pattern`
+squares, a facts table, a short FAQ (visible + `FAQPage` JSON-LD, as
+everywhere), and links to the other patterns. The planner itself is not in any
+page's HTML: `roster.js` writes it into `<div id="planner-root"
+data-preset="…">`, so all nine pages share one copy, and opens it on that
+preset. A share link made on a pattern page still points at `/roster/#v=1…`.
+
+The pattern pages are copies of one layout, like the guides: a change to the
+shared parts goes into all eight. Adding one means the page, its
+`images/og-roster-<slug>.jpg`, the lists on `roster/index.html` and on the
+other pattern pages, `sitemap.xml` and `llms.txt`. A guide about a pattern
+should link to its pattern page rather than to `#preset=`.
+
+**Preview images.** `images/og-roster.jpg` and `images/og-roster-<slug>.jpg`
+(1200×630 JPEG, see the Open Graph note under Editing) are the link previews.
+They matter more here than anywhere: the roster is behind the `#`, so every
+shared link previews as the page it was made on. `images/roster-screenshot.webp`
+is the `screenshot` in the main page's `WebApplication` JSON-LD, which carries
+`"@id": "https://shiftyhabits.com/roster/#webapp"`; the pattern pages' `WebPage`
+JSON-LD points at it as `mainEntity`.
 
 ## The privacy policy
 
@@ -196,11 +252,13 @@ preview card that fails to render is worse than a slightly larger file.
 
 ## Security
 
-The site is static, with no JavaScript, no forms, no cookies and no third-party
-requests. A `Content-Security-Policy` is declared as a `<meta>` tag in
-`index.html` rather than as a response header, because GitHub Pages does not let
-you set headers. It is `default-src 'none'` with narrow exceptions for
-same-origin images and CSS.
+The site is static, with no forms, no cookies and no third-party requests, and
+no JavaScript except on `roster/`. A `Content-Security-Policy` is declared as a
+`<meta>` tag on every page rather than as a response header, because GitHub
+Pages does not let you set headers. It is `default-src 'none'` with narrow
+exceptions for same-origin images and CSS. `roster/index.html` alone adds
+`script-src 'self'` for its own `roster.js`; nothing inline, so no hash or
+`'unsafe-inline'` is needed.
 
 Two consequences worth knowing:
 
@@ -212,8 +270,8 @@ Two consequences worth knowing:
   nothing to click but outbound links, that is an accepted risk rather than a
   gap to close.
 
-If a script is ever added, widen the CSP deliberately, and with a hash rather
-than `'unsafe-inline'`.
+If another script is added, widen that page's CSP deliberately: a same-origin
+file under `script-src 'self'`, or a hash, never `'unsafe-inline'`.
 
 ## The domain
 

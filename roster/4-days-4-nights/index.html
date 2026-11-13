@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- A roster pattern page: crawlable text about one pattern, plus the shared
+     planner that ../roster.js draws into #planner-root, opened on data-preset. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0e1a">
+
+<title>4 Days 4 Nights 4 Off Calendar: See Your Roster</title>
+<meta name="description" content="Free calendar for a 4 days, 4 off, 4 nights, 4 off roster. Set when your cycle starts and see every day shift, night shift and day off for the year.">
+<link rel="canonical" href="https://shiftyhabits.com/roster/4-days-4-nights/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shifty Habits">
+<meta property="og:url" content="https://shiftyhabits.com/roster/4-days-4-nights/">
+<meta property="og:title" content="4 days, 4 nights, 4 off: shift calendar">
+<meta property="og:description" content="This roster is a 16-day cycle: four 12-hour day shifts, four days off, four 12-hour night shifts and four more days off. It averages 42 hours a week, and like every 4-on-4-off pattern it drifts through the week.">
+<meta property="og:image" content="https://shiftyhabits.com/images/og-roster-4-days-4-nights.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="4 days, 4 nights, 4 off: shift calendar: a year calendar of the pattern">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shiftyhabits.com/images/og-roster-4-days-4-nights.jpg">
+
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../images/icon-192.png" type="image/png" sizes="192x192">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../roster.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://shiftyhabits.com/roster/4-days-4-nights/",
+  "url": "https://shiftyhabits.com/roster/4-days-4-nights/",
+  "name": "4 days, 4 nights, 4 off: shift calendar",
+  "description": "Free calendar for a 4 days, 4 off, 4 nights, 4 off roster. Set when your cycle starts and see every day shift, night shift and day off for the year.",
+  "about": {
+    "@type": "Thing",
+    "name": "4 days, 4 nights shift pattern"
+  },
+  "primaryImageOfPage": "https://shiftyhabits.com/images/og-roster-4-days-4-nights.jpg",
+  "image": "https://shiftyhabits.com/images/og-roster-4-days-4-nights.jpg",
+  "datePublished": "2026-11-13",
+  "dateModified": "2026-11-13",
+  "author": {
+    "@type": "Person",
+    "@id": "https://shiftyhabits.com/about/#luke",
+    "name": "Luke Briggs",
+    "url": "https://shiftyhabits.com/about/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  },
+  "relatedLink": [
+    "https://shiftyhabits.com/roster/"
+  ],
+  "mainEntity": {
+    "@id": "https://shiftyhabits.com/roster/#webapp"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shiftyhabits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Roster calendar",
+      "item": "https://shiftyhabits.com/roster/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "4 days, 4 nights",
+      "item": "https://shiftyhabits.com/roster/4-days-4-nights/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long is a 4 days, 4 nights, 4 off cycle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sixteen days: four day shifts, four days off, four night shifts and four days off. With 12-hour shifts it averages 42 hours a week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 4 days 4 nights the same as 4-on-4-off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's the most common form of it. Plain 4-on-4-off can mean the same shift every block, an eight-day cycle; when the blocks alternate between days and nights the full cycle is sixteen days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I see my 4 days, 4 nights roster on a calendar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the calendar on this page, set the date of your first day shift as day 1, and change the shift times to yours. It shows every day shift, night shift and day off for the next twelve months, and you can share it as a link."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../../">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Shifty Habits
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../../guides/">Guides</a>
+      <a href="../">Roster calendar</a>
+      <a href="../../#solution">How it works</a>
+      <a href="../../#privacy">Privacy</a>
+      <a href="../../#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it on Google Play</a>
+  </div>
+</header>
+
+<main id="main" class="roster-page">
+
+  <div class="wrap roster-head">
+    <p class="breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Roster calendar</a><span>/</span>4 days, 4 nights</p>
+    <h1>4 days, 4 nights, 4 off: shift calendar</h1>
+    <p class="standfirst">Four days, four off, four nights, four off: the days-and-nights version of 4-on-4-off. Set when your cycle starts and see the whole year.</p>
+    <div class="answer-box">
+      <p><strong>The short answer:</strong> This roster is a <strong>16-day cycle</strong>: four 12-hour day shifts, four days off, four 12-hour night shifts and four more days off. It averages <strong>42 hours a week</strong>, and like every 4-on-4-off pattern it drifts through the week.</p>
+    </div>
+  </div>
+
+  <p id="noscript-note" class="wrap roster-noscript">The calendar needs JavaScript turned on. The pattern is described below.</p>
+
+  <div id="planner-root" data-preset="4d-4n"></div>
+
+  <div class="wrap roster-about">
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">The 4 days, 4 nights pattern</h2>
+      <p class="hint">One full cycle, one square per day: D day shift, N night shift, – day off.</p>
+      <div class="pattern">
+        <span class="d">D</span><span class="d">D</span><span class="d">D</span><span class="d">D</span><span class="o">–</span><span class="o">–</span><span class="o">–</span><span class="o">–</span><span class="n">N</span><span class="n">N</span><span class="n">N</span><span class="n">N</span><span class="o">–</span><span class="o">–</span><span class="o">–</span><span class="o">–</span>
+      </div>
+      <div class="table-scroll">
+      <table class="pattern-facts">
+        <tbody>
+          <tr><th>Cycle length</th><td>16 days</td></tr>
+          <tr><th>Shift length</th><td>12 hours</td></tr>
+          <tr><th>Average week</th><td>42 hours</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>It's the most common way 24/7 sites run 4-on-4-off: each crew takes a block of days, then a block of nights, with four days between them to turn the body clock around.</p>
+
+      <p>The four days off after nights do two jobs: the first usually goes on sleep, and the last is where you shift your bedtime back for the next block of days.</p>
+
+      <p>More on this pattern: <a href="../../guides/shift-rotation-patterns/">Common shift rotation patterns explained</a>.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <div class="roster-cta">
+      <div>
+        <h2>Habits that follow your 4 days, 4 nights roster</h2>
+        <p>Shifty Habits is a habit tracker built on your roster rather than the week. Set up your 4 days, 4 nights cycle once and your habits and reminders follow each shift type, so the gym lands on days off and a wind-down follows nights. Days off never break a work-day streak. Free for Android.</p>
+      </div>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Get it free on Google Play</a>
+    </div>
+  </div>
+
+  <div class="wrap roster-faq">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+
+      <div class="faq-item">
+        <h3>How long is a 4 days, 4 nights, 4 off cycle?</h3>
+        <p>Sixteen days: four day shifts, four days off, four night shifts and four days off. With 12-hour shifts it averages 42 hours a week.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is 4 days 4 nights the same as 4-on-4-off?</h3>
+        <p>It's the most common form of it. Plain 4-on-4-off can mean the same shift every block, an eight-day cycle; when the blocks alternate between days and nights the full cycle is sixteen days.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I see my 4 days, 4 nights roster on a calendar?</h3>
+        <p>Open the calendar on this page, set the date of your first day shift as day 1, and change the shift times to yours. It shows every day shift, night shift and day off for the next twelve months, and you can share it as a link.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wrap roster-others">
+    <h2>Other shift patterns</h2>
+    <ul class="pattern-links">
+      <li><a href="../4-on-4-off/">4-on-4-off <span>8-day cycle</span></a></li>
+      <li><a href="../continental/">Continental (2-2-4) <span>8-day cycle</span></a></li>
+      <li><a href="../panama/">Panama (2-2-3) <span>14-day cycle</span></a></li>
+      <li><a href="../dupont/">DuPont <span>28-day cycle</span></a></li>
+      <li><a href="../2-on-2-off/">2-on-2-off <span>4-day cycle</span></a></li>
+      <li><a href="../3-on-3-off/">3-on-3-off <span>6-day cycle</span></a></li>
+      <li><a href="../7-on-7-off/">7-on-7-off <span>14-day cycle</span></a></li>
+      <li><a href="../">Build your own <span>any cycle up to 84 days</span></a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Shifty Habits</span>
+    <span class="footer-links">
+      <a href="../../">Home</a>
+      <a href="../../guides/">Guides</a>
+      <a href="../">Roster calendar</a>
+      <a href="https://play.google.com/store/apps/details?id=com.shiftyhabits.app" rel="noopener">Google Play</a>
+      <a href="../../about/">About</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../terms/">Terms</a>
+      <a href="mailto:ShiftyHabits@gmail.com">Contact</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

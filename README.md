@@ -131,6 +131,14 @@ shared parts goes into all eight. Adding one means the page, its
 other pattern pages, `sitemap.xml` and `llms.txt`. A guide about a pattern
 should link to its pattern page rather than to `#preset=`.
 
+**Play links are tagged.** Every "Get it on Google Play" link on a roster page
+carries `&amp;referrer=utm_source%3Dshiftyhabits.com%26utm_medium%3Droster-calendar%26utm_campaign%3D<slug>`
+(`main` for `roster/` itself), so Play Console's acquisition report shows how
+many installs each roster page brought in. Keep the tag on any new Play link
+there, with the page's slug as the campaign. Nothing is collected from visitors;
+it's a label on the link. The app's roster hand-off (see the app repo's
+`plans/roster-links.md`) will add its own key to the same `referrer` string.
+
 **Preview images.** `images/og-roster.jpg` and `images/og-roster-<slug>.jpg`
 (1200×630 JPEG, see the Open Graph note under Editing) are the link previews.
 They matter more here than anywhere: the roster is behind the `#`, so every

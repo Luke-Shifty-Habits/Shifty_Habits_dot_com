@@ -57,6 +57,17 @@ Shifty Habits is built and maintained by one developer, Luke Briggs, a maintenan
 
 A free shift roster calendar on the site, at https://shiftyhabits.com/roster/ . Pick a repeating pattern (4-on-4-off, 4 days 4 nights, 2 days 2 nights 4 off, Panama 2-2-3, 2 earlies 2 lates 2 nights 4 off, DuPont, 2-2, 3-3, 4-3, 7-7, 5-2) or build one day by day with your own shift types and times, set the date the cycle starts, and see every shift for twelve months, with today's shift and the next day off. It can be shared as a link that opens the same calendar on any phone or computer, and printed. No account; it runs entirely in the browser, and the roster is held in the part of the link after the # sign, which browsers never send to a server, and in the browser's own storage. The patterns are the same as the app's cycle presets.
 
+Each common pattern has its own page that opens the calendar on it and describes the cycle:
+
+- **4-on-4-off shift calendar** — https://shiftyhabits.com/roster/4-on-4-off/ (8-day cycle)
+- **4 days, 4 nights, 4 off: shift calendar** — https://shiftyhabits.com/roster/4-days-4-nights/ (16-day cycle)
+- **Continental shift calendar (2 days, 2 nights, 4 off)** — https://shiftyhabits.com/roster/continental/ (8-day cycle)
+- **Panama shift calendar (2-2-3)** — https://shiftyhabits.com/roster/panama/ (14-day cycle)
+- **DuPont shift calendar** — https://shiftyhabits.com/roster/dupont/ (28-day cycle)
+- **2-on-2-off shift calendar** — https://shiftyhabits.com/roster/2-on-2-off/ (4-day cycle)
+- **3-on-3-off shift calendar** — https://shiftyhabits.com/roster/3-on-3-off/ (6-day cycle)
+- **7-on-7-off shift calendar** — https://shiftyhabits.com/roster/7-on-7-off/ (14-day cycle)
+
 ## Guides
 
 Longer-form writing on the site, each answering a question shift workers actually ask. The full list of questions they cover, each linked to its answer, is on the guides page: https://shiftyhabits.com/guides/

@@ -14,8 +14,9 @@
 //   c  one character per cycle day, 1–84 days: 0–7 index into t, - is Off
 //
 // Off is never listed in t: the app has its own seeded Off type.
-// #preset=<id> opens the builder on one of PRESETS instead (the guides link
-// that way). Anything that doesn't parse is ignored and the page starts fresh.
+// #preset=<id> opens the builder on one of PRESETS instead. A pattern page
+// (roster/<slug>/) opens on the preset named by #planner-root's data-preset.
+// The planner markup itself lives in PLANNER_HTML below, shared by every page. Anything that doesn't parse is ignored and the page starts fresh.
 // A link is untrusted input: names only ever reach the page as textContent,
 // colours are checked against a hex pattern, numbers are range-checked.
 
@@ -60,6 +61,82 @@
       types: [{ name: 'Work', start: '09:00', minutes: 480, color: '4a90e2' }],
       blocks: [[0, 5], ['-', 2]] }
   ];
+
+  // The planner's markup. It is built here rather than written into each page,
+  // because the main page and every pattern page share it and it is useless
+  // without this script anyway; the pages carry only crawlable text. Static
+  // markup only: nothing from a link or the visitor is ever put into it.
+  var PLANNER_HTML = [
+    "<div id=\"planner\" class=\"wrap planner\">",
+    "  <section id=\"builder\" class=\"roster-card builder\" aria-labelledby=\"builder-title\">",
+    "    <h2 id=\"builder-title\">1. Your pattern</h2>",
+    "    <p class=\"hint\">Start from a common rotation, then change anything that doesn't match yours.</p>",
+    "    <div id=\"presets\" class=\"chips\" role=\"group\" aria-label=\"Common patterns\"></div>",
+    "    <h3>Shift types</h3>",
+    "    <p class=\"hint\">Tap the colour to change it. Days off don't need a type.</p>",
+    "    <div id=\"types\" class=\"types\"></div>",
+    "    <button id=\"add-type\" class=\"btn btn-ghost btn-small\" type=\"button\">+ Add a shift type</button>",
+    "    <h3>The cycle <span id=\"cycle-length\" class=\"cycle-length\"></span></h3>",
+    "    <p class=\"hint\">Choose a shift below, then tap days in the cycle to set them.</p>",
+    "    <div id=\"brushes\" class=\"brushes\" role=\"group\" aria-label=\"Shift to set\"></div>",
+    "    <div id=\"cycle\" class=\"cycle\"></div>",
+    "    <div class=\"row-actions\">",
+    "      <button id=\"add-day\" class=\"btn btn-ghost btn-small\" type=\"button\">+ Add a day</button>",
+    "      <button id=\"remove-day\" class=\"btn btn-ghost btn-small\" type=\"button\">− Remove last day</button>",
+    "    </div>",
+    "    <h2>2. When it starts</h2>",
+    "    <div class=\"fields\">",
+    "      <label class=\"field\">",
+    "        <span>Day 1 of the cycle falls on</span>",
+    "        <span class=\"field-row\">",
+    "          <input id=\"start-date\" type=\"date\" required>",
+    "          <button id=\"start-today\" class=\"btn btn-ghost btn-small\" type=\"button\">Today</button>",
+    "        </span>",
+    "      </label>",
+    "      <label class=\"field\">",
+    "        <span>Roster name <em>(optional, shown on the shared link)</em></span>",
+    "        <input id=\"roster-name\" type=\"text\" maxlength=\"40\" placeholder=\"e.g. B shift\">",
+    "      </label>",
+    "    </div>",
+    "  </section>",
+    "  <section class=\"roster-card calendar\" aria-labelledby=\"roster-title\">",
+    "    <div class=\"calendar-head\">",
+    "      <div>",
+    "        <p id=\"viewing-note\" class=\"eyebrow-small\" hidden>Shared roster</p>",
+    "        <h2 id=\"roster-title\">Your roster</h2>",
+    "        <p id=\"today\" class=\"today-line\"></p>",
+    "        <p id=\"next\" class=\"next-line\"></p>",
+    "      </div>",
+    "      <button id=\"edit\" class=\"btn btn-ghost btn-small\" type=\"button\" hidden>Edit this roster</button>",
+    "    </div>",
+    "    <ul id=\"legend\" class=\"legend\"></ul>",
+    "    <div class=\"calendar-nav\">",
+    "      <button id=\"prev\" class=\"btn btn-ghost btn-small\" type=\"button\" aria-label=\"Previous twelve months\">←</button>",
+    "      <span id=\"range\" class=\"range\" aria-live=\"polite\"></span>",
+    "      <button id=\"next-year\" class=\"btn btn-ghost btn-small\" type=\"button\" aria-label=\"Next twelve months\">→</button>",
+    "      <label class=\"week-start\">",
+    "        <span>Week starts</span>",
+    "        <select id=\"week-start\">",
+    "          <option value=\"1\">Monday</option>",
+    "          <option value=\"0\">Sunday</option>",
+    "        </select>",
+    "      </label>",
+    "    </div>",
+    "    <div id=\"months\" class=\"months\"></div>",
+    "  </section>",
+    "  <section class=\"roster-card share-card\" aria-labelledby=\"share-title\">",
+    "    <h2 id=\"share-title\">Share or print</h2>",
+    "    <p class=\"hint\">The link holds the whole roster, so anyone you send it to sees this calendar on any phone or computer, without signing up. Nothing is stored on our side. Anyone with the link can see it.</p>",
+    "    <div class=\"share-row\">",
+    "      <input id=\"share-url\" type=\"text\" readonly aria-label=\"Share link\">",
+    "      <button id=\"copy\" class=\"btn btn-primary btn-small\" type=\"button\">Copy link</button>",
+    "      <button id=\"share\" class=\"btn btn-ghost btn-small\" type=\"button\" hidden>Share…</button>",
+    "      <button id=\"print\" class=\"btn btn-ghost btn-small\" type=\"button\">Print</button>",
+    "    </div>",
+    "    <p id=\"share-status\" class=\"share-status\" role=\"status\"></p>",
+    "  </section>",
+    "</div>"
+  ].join('\n');
 
   // ---------------------------------------------------------------- dates
   // Calendar days are handled as UTC midnights so daylight saving never
@@ -532,7 +609,9 @@
   // ---------------------------------------------------------------- share
 
   function shareUrl() {
-    return location.origin + location.pathname + '#' + encode(state);
+    // Always the main page, whichever pattern page made it: /roster/#v=1… is
+    // the address the app claims.
+    return location.origin + '/roster/#' + encode(state);
   }
 
   function renderShare() {
@@ -618,10 +697,14 @@
       viewing = load(STORE_KEY) !== raw;
       return;
     }
+    // A pattern page (data-preset) opens on its pattern; the main page on the
+    // visitor's last roster, else the first preset.
+    viewing = false;
+    var pagePreset = presetById($('planner-root').getAttribute('data-preset') || '');
+    if (pagePreset) { state = null; applyPreset(pagePreset, false); return; }
     var mine = load(STORE_KEY);
     state = mine ? decode(mine) : null;
-    if (!state) { state = null; applyPreset(PRESETS[0], false); }
-    viewing = false;
+    if (!state) applyPreset(PRESETS[0], false);
   }
 
   function start() {
@@ -629,6 +712,10 @@
     weekStart = storedWeek === '0' || storedWeek === '1' ? +storedWeek : localeWeekStart();
     var now = new Date();
     viewFrom = utcDay(now.getFullYear(), now.getMonth(), 1);
+
+    var root = $('planner-root');
+    if (!root) return;
+    root.innerHTML = PLANNER_HTML;
 
     readHash();
     renderPresets();
@@ -674,9 +761,9 @@
       if (location.hash.replace(/^#/, '') === encode(state)) return;
       readHash();
       render();
+      if (location.hash.indexOf('preset=') === 1) $('planner').scrollIntoView({ block: 'start' });
     });
 
-    $('planner').hidden = false;
     $('noscript-note').hidden = true;
     if (location.hash.indexOf('preset=') === 1) changed(); else render();
   }

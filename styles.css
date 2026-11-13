@@ -835,6 +835,58 @@ button:focus-visible {
   max-width: 62ch;
 }
 
+.roster-head .answer-box { max-width: 78ch; margin-bottom: 28px; }
+.roster-head .answer-box p { margin: 0; color: var(--text-dim); }
+.roster-head .answer-box strong { color: var(--text); }
+
+/* The crawlable half of the pattern pages: the pattern drawn statically, its
+   facts, and links between patterns. Readable with or without the script. */
+.roster-about { padding-top: 40px; }
+.roster-about section { max-width: 720px; }
+.roster-about h2, .roster-others h2 { font-size: 22px; margin: 0 0 8px; }
+.roster-about p { color: var(--text-dim); margin: 0 0 16px; }
+.roster-about .pattern span { width: 30px; height: 30px; }
+
+.pattern-facts {
+  border-collapse: collapse;
+  font-size: 14.5px;
+  margin: 0 0 20px;
+}
+
+.pattern-facts th, .pattern-facts td {
+  text-align: left;
+  padding: 8px 18px 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+.pattern-facts th { color: var(--text); font-weight: 700; white-space: nowrap; }
+
+.roster-others { padding-top: 40px; }
+
+.pattern-links {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+
+.pattern-links a {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.pattern-links a:hover { border-color: var(--purple); }
+.pattern-links span { display: block; margin-top: 2px; font-weight: 400; font-size: 13px; color: var(--text-faint); }
+
 .roster-noscript {
   color: var(--text-dim);
   padding-bottom: 32px;
@@ -1135,7 +1187,7 @@ button.btn:disabled { opacity: 0.4; cursor: default; }
 /* Print: just the roster, in colour, three months across. */
 @media print {
   header.site, footer.site, .skip-link, .roster-head, #viewing-note,
-  .builder, .share-card, .roster-cta, .roster-faq, .calendar-nav, #edit, #next { display: none !important; }
+  .builder, .share-card, .roster-cta, .roster-faq, .roster-about, .roster-others, .calendar-nav, #edit, #next { display: none !important; }
   body { background: #ffffff; color: #000000; }
   .planner { display: block; padding: 0; }
   .roster-card { border: 0; padding: 0; background: none; }

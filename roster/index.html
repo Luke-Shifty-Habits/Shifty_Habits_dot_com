@@ -17,9 +17,12 @@
 <meta property="og:url" content="https://shiftyhabits.com/roster/">
 <meta property="og:title" content="Shift roster calendar">
 <meta property="og:description" content="Build your shift pattern, see a year of shifts, and share it as a link. Free, no sign-up, nothing leaves your browser.">
-<meta property="og:image" content="https://shiftyhabits.com/images/og-card.jpg">
+<meta property="og:image" content="https://shiftyhabits.com/images/og-roster.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shift roster calendar: a year of shifts in colour">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://shiftyhabits.com/images/og-card.jpg">
+<meta name="twitter:image" content="https://shiftyhabits.com/images/og-roster.jpg">
 
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" href="../images/icon-192.png" type="image/png" sizes="192x192">
@@ -31,10 +34,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "@id": "https://shiftyhabits.com/roster/#webapp",
   "name": "Shift roster calendar",
+  "alternateName": "Shifty Habits roster calendar",
   "url": "https://shiftyhabits.com/roster/",
   "description": "A free shift roster calendar: build a repeating shift pattern such as 4-on-4-off, Panama 2-2-3, DuPont or a continental rotation, see every shift for the year, and share it as a link. Runs entirely in the browser with no account.",
   "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "Shift roster calendar",
   "operatingSystem": "Any",
   "browserRequirements": "Requires JavaScript",
   "isAccessibleForFree": true,
@@ -43,8 +49,32 @@
     "price": "0",
     "priceCurrency": "USD"
   },
+  "featureList": [
+    "Presets for 4-on-4-off, 4 days 4 nights 4 off, continental (2 days, 2 nights, 4 off), Panama 2-2-3, DuPont, 2-on-2-off, 3-on-3-off, 4-on-3-off, 7-on-7-off and 5-on-2-off",
+    "Custom cycles up to 84 days with up to eight shift types and their own start and finish times",
+    "Twelve-month calendar from any start date, with today's shift and the next day off",
+    "Shift and day-off counts for the year",
+    "Share the roster as a link that opens on any phone or computer",
+    "Print the year in colour",
+    "No account; the roster stays in the browser"
+  ],
+  "image": "https://shiftyhabits.com/images/og-roster.jpg",
+  "screenshot": "https://shiftyhabits.com/images/roster-screenshot.webp",
+  "datePublished": "2026-11-13",
+  "dateModified": "2026-11-13",
+  "creator": {
+    "@type": "Person",
+    "@id": "https://shiftyhabits.com/about/#luke",
+    "name": "Luke Briggs",
+    "url": "https://shiftyhabits.com/about/"
+  },
   "publisher": {
     "@type": "Organization",
+    "name": "Shifty Habits",
+    "url": "https://shiftyhabits.com/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
     "name": "Shifty Habits",
     "url": "https://shiftyhabits.com/"
   }
@@ -146,88 +176,31 @@
     <p class="breadcrumb"><a href="../">Home</a><span>/</span>Roster calendar</p>
     <h1>Shift roster calendar</h1>
     <p class="standfirst">Pick your pattern, set the day it starts, and see every shift for the year. Share it with a link, or print it for the fridge. No sign-up, and your roster never leaves your browser.</p>
+    <div class="answer-box">
+      <p><strong>The short answer:</strong> this is a free shift roster calendar. Choose a pattern such as <strong>4-on-4-off, Panama 2-2-3, DuPont or continental</strong>, or build your own cycle of up to 84 days, set the date day 1 falls on, and it shows <strong>every shift and day off for the next twelve months</strong>. Share it as a link or print it. No account, and nothing is sent to a server.</p>
+    </div>
   </div>
 
   <p id="noscript-note" class="wrap roster-noscript">The roster calendar needs JavaScript turned on. Everything else on this site works without it.</p>
 
-  <div id="planner" class="wrap planner" hidden>
+  <div id="planner-root"></div>
 
-    <section id="builder" class="roster-card builder" aria-labelledby="builder-title">
-      <h2 id="builder-title">1. Your pattern</h2>
-      <p class="hint">Start from a common rotation, then change anything that doesn't match yours.</p>
-      <div id="presets" class="chips" role="group" aria-label="Common patterns"></div>
-
-      <h3>Shift types</h3>
-      <p class="hint">Tap the colour to change it. Days off don't need a type.</p>
-      <div id="types" class="types"></div>
-      <button id="add-type" class="btn btn-ghost btn-small" type="button">+ Add a shift type</button>
-
-      <h3>The cycle <span id="cycle-length" class="cycle-length"></span></h3>
-      <p class="hint">Choose a shift below, then tap days in the cycle to set them.</p>
-      <div id="brushes" class="brushes" role="group" aria-label="Shift to set"></div>
-      <div id="cycle" class="cycle"></div>
-      <div class="row-actions">
-        <button id="add-day" class="btn btn-ghost btn-small" type="button">+ Add a day</button>
-        <button id="remove-day" class="btn btn-ghost btn-small" type="button">− Remove last day</button>
-      </div>
-
-      <h2>2. When it starts</h2>
-      <div class="fields">
-        <label class="field">
-          <span>Day 1 of the cycle falls on</span>
-          <span class="field-row">
-            <input id="start-date" type="date" required>
-            <button id="start-today" class="btn btn-ghost btn-small" type="button">Today</button>
-          </span>
-        </label>
-        <label class="field">
-          <span>Roster name <em>(optional, shown on the shared link)</em></span>
-          <input id="roster-name" type="text" maxlength="40" placeholder="e.g. B shift">
-        </label>
-      </div>
-    </section>
-
-    <section class="roster-card calendar" aria-labelledby="roster-title">
-      <div class="calendar-head">
-        <div>
-          <p id="viewing-note" class="eyebrow-small" hidden>Shared roster</p>
-          <h2 id="roster-title">Your roster</h2>
-          <p id="today" class="today-line"></p>
-          <p id="next" class="next-line"></p>
-        </div>
-        <button id="edit" class="btn btn-ghost btn-small" type="button" hidden>Edit this roster</button>
-      </div>
-
-      <ul id="legend" class="legend"></ul>
-
-      <div class="calendar-nav">
-        <button id="prev" class="btn btn-ghost btn-small" type="button" aria-label="Previous twelve months">←</button>
-        <span id="range" class="range" aria-live="polite"></span>
-        <button id="next-year" class="btn btn-ghost btn-small" type="button" aria-label="Next twelve months">→</button>
-        <label class="week-start">
-          <span>Week starts</span>
-          <select id="week-start">
-            <option value="1">Monday</option>
-            <option value="0">Sunday</option>
-          </select>
-        </label>
-      </div>
-
-      <div id="months" class="months"></div>
-    </section>
-
-    <section class="roster-card share-card" aria-labelledby="share-title">
-      <h2 id="share-title">Share or print</h2>
-      <p class="hint">The link holds the whole roster, so anyone you send it to sees this calendar on any phone or computer, without signing up. Nothing is stored on our side. Anyone with the link can see it.</p>
-      <div class="share-row">
-        <input id="share-url" type="text" readonly aria-label="Share link">
-        <button id="copy" class="btn btn-primary btn-small" type="button">Copy link</button>
-        <button id="share" class="btn btn-ghost btn-small" type="button" hidden>Share…</button>
-        <button id="print" class="btn btn-ghost btn-small" type="button">Print</button>
-      </div>
-      <p id="share-status" class="share-status" role="status"></p>
-    </section>
-
+  <div class="wrap roster-others">
+    <h2>Shift patterns in the calendar</h2>
+    <p class="hint">Each opens the calendar on that pattern. Change the shift times, the cycle or the start date to match your own roster.</p>
+    <ul class="pattern-links">
+      <li><a href="4-on-4-off/">4-on-4-off shift calendar <span>8-day cycle</span></a></li>
+      <li><a href="4-days-4-nights/">4 days, 4 nights, 4 off: shift calendar <span>16-day cycle</span></a></li>
+      <li><a href="continental/">Continental shift calendar (2 days, 2 nights, 4 off) <span>8-day cycle</span></a></li>
+      <li><a href="panama/">Panama shift calendar (2-2-3) <span>14-day cycle</span></a></li>
+      <li><a href="dupont/">DuPont shift calendar <span>28-day cycle</span></a></li>
+      <li><a href="2-on-2-off/">2-on-2-off shift calendar <span>4-day cycle</span></a></li>
+      <li><a href="3-on-3-off/">3-on-3-off shift calendar <span>6-day cycle</span></a></li>
+      <li><a href="7-on-7-off/">7-on-7-off shift calendar <span>14-day cycle</span></a></li>
+      <li><a href="#preset=4-on-3-off">4 on, 3 off <span>7-day cycle</span></a></li>
+      <li><a href="#preset=5-on-2-off">5 on, 2 off <span>7-day cycle, an ordinary working week</span></a></li>
+      <li><a href="#preset=continental">2 earlies, 2 lates, 2 nights, 4 off <span>10-day cycle of 8-hour shifts</span></a></li>
+    </ul>
   </div>
 
   <div class="wrap">

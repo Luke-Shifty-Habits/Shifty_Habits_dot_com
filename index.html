@@ -61,6 +61,7 @@
     "Streaks that skip rostered days off instead of breaking",
     "Per-shift-type filtering of a habit's history and score",
     "Sleep Mode: a Do Not Disturb mode for sleeping after shifts that still lets calls from work through, switching on by itself around the roster",
+    "Sleep and phone tracking: sleep estimated from when the phone went down and came back up, and phone use, counted by shift-day and compared with the planned sleep for each shift type",
     "Auto-complete for habits done by default: unlogged days count as done, so only the misses need logging",
     "Reminders anchored to leaving for work, shift start, a break, shift end, getting home or bedtime, worked out from the roster",
     "Calendar sync: upcoming shifts, habit times and sleep windows added to a calendar on the phone, such as Google Calendar",
@@ -220,7 +221,7 @@
       "name": "Is Shifty Habits free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models, Sleep Mode and adding your shifts to Google Calendar. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good."
+        "text": "Yes — there's no limit on the number of habits you can track, and backup and restore are free. Sleep and phone tracking is free too. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models, Sleep Mode and adding your shifts to Google Calendar. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good."
       }
     },
     {
@@ -229,6 +230,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, with calendar sync (Pro). Under Settings → Schedule → Add to your calendar, pick a calendar on your phone — choose your Google calendar and your upcoming shifts, the times you've set for habits and your sleep windows appear in Google Calendar on the web and your other devices. It keeps two weeks ahead and updates as your roster changes. The app never signs in to Google or sends anything itself: it adds the events through Android's own calendar, and only ever changes the events it added."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Shifty Habits track my sleep around my shifts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with sleep & phone tracking (free, Android 9 and later, off until you turn it on). It estimates when you slept from when your phone went down and came back up, counts each sleep towards the shift-day you wake into, and shows it against the sleep you planned for that shift type — so you can see, for example, how much less you sleep before nights. It also counts screen time and time on your phone inside your planned sleep. It's an estimate, so you can correct any night. It needs Android's Usage access, which only shows the app when your screen turns on and off and when you unlock; everything stays on your phone. Free shows the last 30 days; Pro keeps the full history and adds sleep by shift type."
       }
     },
     {
@@ -481,7 +490,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Free to track every habit you want</h2>
-        <p>There's no limit on how many habits you can create, and backup and restore are free. The free tier is the real app — Pro is extra: longer history, alternate scoring views, Sleep Mode and calendar sync. Until 1 January 2027 all of Pro is free for everyone, and if you open the app before then, you keep it for good.</p>
+        <p>There's no limit on how many habits you can create, and backup and restore are free. The free tier is the real app, sleep and phone tracking included — Pro is extra: longer history, alternate scoring views, Sleep Mode and calendar sync. Until 1 January 2027 all of Pro is free for everyone, and if you open the app before then, you keep it for good.</p>
       </div>
     </div>
   </section>
@@ -590,12 +599,17 @@
 
         <div class="faq-item">
           <h3>Is Shifty Habits free?</h3>
-          <p>Yes — there's no limit on the number of habits you can track, and backup and restore are free. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models, Sleep Mode and adding your shifts to Google Calendar. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good.</p>
+          <p>Yes — there's no limit on the number of habits you can track, and backup and restore are free. Sleep and phone tracking is free too. An optional paid upgrade, Pro, adds extras like a longer history window, alternate scoring models, Sleep Mode and adding your shifts to Google Calendar. Until 1 January 2027 every Pro feature is free for everyone, and anyone who opens the app before then keeps Pro for good.</p>
         </div>
 
         <div class="faq-item">
           <h3>Can Shifty Habits put my shifts in Google Calendar?</h3>
           <p>Yes, with calendar sync (Pro). Under Settings → Schedule → Add to your calendar, pick a calendar on your phone — choose your Google calendar and your upcoming shifts, the times you've set for habits and your sleep windows appear in Google Calendar on the web and your other devices. It keeps two weeks ahead and updates as your roster changes. The app never signs in to Google or sends anything itself: it adds the events through Android's own calendar, and only ever changes the events it added.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can Shifty Habits track my sleep around my shifts?</h3>
+          <p>Yes, with sleep &amp; phone tracking (free, Android 9 and later, off until you turn it on). It estimates when you slept from when your phone went down and came back up, counts each sleep towards the shift-day you wake into, and shows it against the sleep you planned for that shift type — so you can see, for example, how much less you sleep before nights. It also counts screen time and time on your phone inside your planned sleep. It's an estimate, so you can correct any night. It needs Android's Usage access, which only shows the app when your screen turns on and off and when you unlock; everything stays on your phone. Free shows the last 30 days; Pro keeps the full history and adds sleep by shift type.</p>
         </div>
 
         <div class="faq-item">

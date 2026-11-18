@@ -135,6 +135,7 @@
     "      <button id=\"print\" class=\"btn btn-ghost btn-small\" type=\"button\">Print</button>",
     "      <a id=\"open-app\" class=\"btn btn-ghost btn-small\" hidden>Open in the app</a>",
     "    </div>",
+    "    <p id=\"open-app-hint\" class=\"hint\" hidden>Open in the app opens this roster in Shifty Habits, ready to save. Without the app it goes to Google Play, and the roster is passed along in the link so the app opens on it once installed. That is the one time your roster leaves the page: Google Play receives it.</p>",
     "    <p id=\"share-status\" class=\"share-status\" role=\"status\"></p>",
     "  </section>",
     "</div>"
@@ -616,18 +617,43 @@
     return location.origin + '/roster/#' + encode(state);
   }
 
-  // The app's own scheme, not the https link: Chrome doesn't hand a link on
-  // the site you're already on to the app that claims it. Android only, since
-  // the app is; with the app missing the tap does nothing and the Play button
-  // is beside it.
+  // "Open in the app": an intent:// link, not the https one, since Chrome
+  // doesn't hand a link on the site you're already on to the app that claims
+  // it. With the app installed it opens on shiftyhabits://roster?r=<roster>
+  // (the # of an intent link holds the intent's own fields, so the roster goes
+  // in r). Without it, Chrome follows browser_fallback_url: the Play listing,
+  // with the roster added to the referrer next to the page's utm keys, which
+  // the app reads on first launch (utils/installRoster.ts in the app repo).
+  // That fallback is the one place the roster is sent anywhere, so the hint
+  // under the button says so. Android only, since the app is.
   var IS_ANDROID = /Android/i.test(navigator.userAgent || '');
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=com.shiftyhabits.app';
+
+  // This page's own utm keys, from its Play button, so installs from the
+  // roster button still count against the page in Play Console.
+  function pageReferrer() {
+    var link = document.querySelector('a[href^="' + PLAY_URL + '"]');
+    var m = link && /[?&]referrer=([^&]*)/.exec(link.getAttribute('href'));
+    try { return m ? decodeURIComponent(m[1]) : ''; } catch (e) { return ''; }
+  }
+
+  function openAppUrl() {
+    var roster = encode(state);
+    var base = pageReferrer();
+    var referrer = (base ? base + '&' : '') + 'roster=' + encodeURIComponent(roster);
+    var fallback = PLAY_URL + '&referrer=' + encodeURIComponent(referrer);
+    return 'intent://roster?r=' + encodeURIComponent(roster) +
+      '#Intent;scheme=shiftyhabits;package=com.shiftyhabits.app;S.browser_fallback_url=' +
+      encodeURIComponent(fallback) + ';end';
+  }
 
   function renderShare() {
     $('share-url').value = shareUrl();
     $('share').hidden = typeof navigator.share !== 'function';
     var open = $('open-app');
     open.hidden = !IS_ANDROID;
-    open.setAttribute('href', 'shiftyhabits://roster#' + encode(state));
+    $('open-app-hint').hidden = !IS_ANDROID;
+    if (IS_ANDROID) open.setAttribute('href', openAppUrl());
   }
 
   function flash(msg) {

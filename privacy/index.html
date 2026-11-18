@@ -74,7 +74,7 @@
     <p class="breadcrumb"><a href="../">Home</a><span>/</span>Privacy policy</p>
     <h1>Privacy policy</h1>
     <p class="standfirst">Shifty Habits helps you track habits around a shift-work schedule. It has no accounts, no sign-in and no server of its own: the app makes no network requests except through the Google services described below.</p>
-    <p class="byline">Last updated <strong>10 November 2026</strong></p>
+    <p class="byline">Last updated <strong>19 November 2026</strong></p>
   </div>
 
   <div class="answer-box">
@@ -90,7 +90,7 @@
 
   <h3>Usage analytics (Firebase Analytics, provided by Google)</h3>
 
-  <p>So that we can tell which parts of the app are used and where people get stuck, the app reports events such as: the app being opened, which screen is shown (with any record id removed), a habit being logged and whether it was logged from a reminder, an onboarding step being completed, the upgrade screen being shown, Sleep Mode being switched on or off or started, calendar sync being switched on or off and which kinds of event it adds (shifts, habit times, sleep — never the calendar, its account or any event), which kind of sleep window was saved (before a shift, after one, or on a day off — never its times), how many reminders were scheduled — as a range, never an exact number — and, if you answer the optional “Did something get in the way?” question the app may ask when setup is left unfinished, which of its fixed answers you picked (nothing you type is ever sent).</p>
+  <p>So that we can tell which parts of the app are used and where people get stuck, the app reports events such as: the app being opened, which screen is shown (with any record id removed), a habit being logged and whether it was logged from a reminder, an onboarding step being completed, the upgrade screen being shown, Sleep Mode being switched on or off or started, calendar sync being switched on or off and which kinds of event it adds (shifts, habit times, sleep — never the calendar, its account or any event), which kind of sleep window was saved (before a shift, after one, or on a day off — never its times), sleep &amp; phone tracking being switched on or off, whether Usage access was granted when asked, and that a night's sleep was corrected or marked as not sleep (never its times), how many reminders were scheduled — as a range, never an exact number — and, if you answer the optional “Did something get in the way?” question the app may ask when setup is left unfinished, which of its fixed answers you picked (nothing you type is ever sent).</p>
 
   <p>Alongside these it records a few coarse labels about the installation: how far through setup you are, which schedule mode you use, roughly how many habits you have (as a range such as “3-5”), whether you have upgraded, whether reminders are on, off, blocked by Android, or not yet asked for, and whether Flexible Roster Mode (different hours on different days) is on. Google also attaches general device information, such as device model and OS version, and an app instance identifier tied to the installation rather than to you.</p>
 
@@ -106,11 +106,17 @@
 
   <h3>Backups you create yourself</h3>
 
-  <p>Exporting a backup writes a complete, unencrypted copy of your database — habits, notes, schedule and history — and hands it to whichever app you choose in the share sheet. The developer never receives it. Once you have sent or saved that file, anyone who can open it can read everything in it, so treat it like any other personal document. Importing a backup reads a file you pick; links in it are checked before they can be opened, and any record of a purchase inside the file is discarded, since ownership comes from Google Play rather than from a file.</p>
+  <p>Exporting a backup writes a complete, unencrypted copy of your database — habits, notes, schedule and history, including your sleep and phone-use history if you track it — and hands it to whichever app you choose in the share sheet. The developer never receives it. Once you have sent or saved that file, anyone who can open it can read everything in it, so treat it like any other personal document. Importing a backup reads a file you pick; links in it are checked before they can be opened, and any record of a purchase inside the file is discarded, since ownership comes from Google Play rather than from a file.</p>
 
   <h2>What the app reads but does not send</h2>
 
   <p>To let you link a habit to another app, Shifty Habits reads the list of apps on your device that can be launched, and their icons. This list is used only to show you a picker, stays on your device, and is never transmitted — including in crash reports, where the linked app's name is deliberately left out.</p>
+
+  <p>If you installed the app from the <strong>Open in the app</strong> button on this site's roster calendar, Google Play passes the roster you built there to the app with the install (in Google Play's install referrer, alongside the tags that say which page of this site you came from). On its first launch the app reads that once to open your roster, ready to save. The roster stays on your device. Firebase Analytics, where diagnostics are on, reads the page tags from the same install information to count where installs came from, as it does for any install from a tagged link.</p>
+
+  <h2>Roster links</h2>
+
+  <p>A roster link (one made on this site's roster calendar, or shared from the app's cycle screen) holds the roster's name, its shift names and times, and its pattern, in the part of the link after the # sign. Opening one in the app reads it on your device; nothing is sent. Sharing a cycle from the app hands that link to the app you choose in Android's share sheet, and only when you tap Share. Anyone who has the link can see the roster.</p>
 
   <h2>Android backup</h2>
 
@@ -124,6 +130,12 @@
 
   <p>If you turn on Sleep Mode, Android asks you to allow Shifty Habits <strong>Do Not Disturb access</strong>. The app uses it only to switch its own Do Not Disturb mode on and off at the times you choose, with the call rules you pick, and to change and then restore your ringer, notification and media volume. Which callers get through (for example, starred contacts) is applied by Android itself — Shifty Habits never reads your contacts or your call history. Your Sleep Mode settings — the times, the call rules and the volumes — stay on the device. If diagnostics are on, the app only reports that Sleep Mode was switched on, off or started, and which kind of sleep window was saved, as described above. Turning Sleep Mode off removes its Do Not Disturb mode; you can withdraw the access at any time in Android's settings.</p>
 
+  <h2>Screen and unlock times (sleep &amp; phone tracking)</h2>
+
+  <p>Sleep &amp; phone tracking is off unless you turn it on (<strong>Settings → Sleep &amp; phone</strong>). When you do, Android asks you to allow Shifty Habits <strong>Usage access</strong>. The app uses it only to read when your screen turned on and off and when you unlocked your phone; from those times it estimates when you slept and how much you used your phone each shift-day. It does not read which apps you used, what you did in them, your notifications or anything on screen.</p>
+
+  <p>The screen times, the sleep estimates and any corrections you make are processed and stored on your device. They are never sent to the developer or anyone else — the diagnostics described above never include a time, a duration, a count or an app — and they are included in a backup you export yourself. The raw screen times are deleted after 60 days; the daily summaries and sleeps stay until you clear them under <strong>Settings → Sleep &amp; phone → Clear sleep &amp; phone history</strong>, clear the app's data or uninstall. You can withdraw Usage access at any time in Android's settings, which stops the tracking.</p>
+
   <h2>Your calendar (calendar sync)</h2>
 
   <p>Calendar sync is off unless you turn it on (<strong>Settings → Schedule → Add to your calendar</strong>, a Pro feature). When you do, Android asks you to allow Shifty Habits <strong>calendar access</strong>. The app uses it to list the calendars on your phone so you can pick one, and to add, update and remove its own events in that calendar: your upcoming shifts, the times you've set for habits, and your sleep windows, each with its name (or a neutral "Habit" if Hide Names in Reminders is on). It never reads, changes or deletes any other event, and it does not send your calendar or its events anywhere itself.</p>
@@ -132,7 +144,7 @@
 
   <h2>Location</h2>
 
-  <p>Shifty Habits does not collect, store or transmit your location. It also does not access your contacts, camera, microphone or photos, and it reads your calendar only if you turn on calendar sync, as described above.</p>
+  <p>Shifty Habits does not collect, store or transmit your location. It also does not access your contacts, camera, microphone or photos, and it reads your calendar only if you turn on calendar sync, and your screen and unlock times only if you turn on sleep &amp; phone tracking, as described above.</p>
 
   <h2>Data sharing</h2>
 

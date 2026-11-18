@@ -98,9 +98,13 @@ library, loaded with `defer`.
   which browsers never send to a server, and in `localStorage` (`roster.v1`,
   plus `roster.weekStart`) so it's there next visit. The page's FAQ and
   `llms.txt` say so; keep it true. No analytics, no third-party requests.
-- **The link format is a contract with the app**, which will import it (open
-  in app / install referrer) and generate it (share a roster). It is
-  documented at the top of `roster.js`: `#v=1&n=…&s=YYYY-MM-DD&t=…&c=…`.
+- **The link format is a contract with the app**, which opens these links
+  (Android App Links on `/roster/` exactly, verified by
+  `/.well-known/assetlinks.json`; the page's "Open in the app" button uses the
+  app's `shiftyhabits://roster#…` scheme, since Chrome won't hand a same-site
+  link to the app) and shares its cycles in the same format. The app side is
+  `utils/rosterLink.ts` in the app repo. It is documented at the top of
+  `roster.js`: `#v=1&n=…&s=YYYY-MM-DD&t=…&c=…`.
   Change it only by adding a `v=2` and keeping `v=1` parsing, since links
   already sent can't be updated.
 - **A link is untrusted input.** Names only reach the page as `textContent`,

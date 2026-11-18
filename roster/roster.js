@@ -3,7 +3,8 @@
 // the roster lives in the URL's #fragment (never sent to any server, GitHub
 // Pages included) and, for the visitor's own convenience, in localStorage.
 //
-// The #fragment is a contract with the app, which will import it. Format v1:
+// The #fragment is a contract with the app (utils/rosterLink.ts), which opens
+// these links and shares its own cycles in the same format. Format v1:
 //
 //   #v=1&n=<name>&s=YYYY-MM-DD&t=<type>,<type>,…&c=<days>
 //
@@ -132,6 +133,7 @@
     "      <button id=\"copy\" class=\"btn btn-primary btn-small\" type=\"button\">Copy link</button>",
     "      <button id=\"share\" class=\"btn btn-ghost btn-small\" type=\"button\" hidden>Share…</button>",
     "      <button id=\"print\" class=\"btn btn-ghost btn-small\" type=\"button\">Print</button>",
+    "      <a id=\"open-app\" class=\"btn btn-ghost btn-small\" hidden>Open in the app</a>",
     "    </div>",
     "    <p id=\"share-status\" class=\"share-status\" role=\"status\"></p>",
     "  </section>",
@@ -614,9 +616,18 @@
     return location.origin + '/roster/#' + encode(state);
   }
 
+  // The app's own scheme, not the https link: Chrome doesn't hand a link on
+  // the site you're already on to the app that claims it. Android only, since
+  // the app is; with the app missing the tap does nothing and the Play button
+  // is beside it.
+  var IS_ANDROID = /Android/i.test(navigator.userAgent || '');
+
   function renderShare() {
     $('share-url').value = shareUrl();
     $('share').hidden = typeof navigator.share !== 'function';
+    var open = $('open-app');
+    open.hidden = !IS_ANDROID;
+    open.setAttribute('href', 'shiftyhabits://roster#' + encode(state));
   }
 
   function flash(msg) {

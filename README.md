@@ -99,20 +99,22 @@ library, loaded with `defer`.
   plus `roster.weekStart`) so it's there next visit. The page's FAQ and
   `llms.txt` say so; keep it true. No analytics, no third-party requests.
 - **Link to the page itself as `roster/index.html`, never `roster/`.** The app
-  claims the bare `/roster/` path (App Links can't see the `#fragment`), so a
-  plain link to the page opens the app on phones that have it, and the app
-  bounces it back out to a browser tab. `/roster/index.html` isn't claimed.
-  Canonical URLs, the sitemap and JSON-LD keep `/roster/`.
+  claims the bare `/roster/` path (App Links can't see the `#fragment`), and
+  Chrome does hand a link to it from another page on this site to the app (seen
+  on a phone, 2026-11), which then bounces it back out to a browser tab.
+  `/roster/index.html` isn't claimed. Canonical URLs, the sitemap and JSON-LD
+  keep `/roster/`.
 - **The link format is a contract with the app**, which opens these links
   (Android App Links on `/roster/` exactly, verified by
   `/.well-known/assetlinks.json`, which holds the Play app-signing key). The
-  page's "Open in the app" button is an `intent://` link, since Chrome won't
-  hand a same-site link to the app: installed, it opens
-  `shiftyhabits://roster?r=<roster>`; not installed, Chrome falls back to the
-  Play listing with `roster=<roster>` added to the page's utm referrer, which
-  the app reads on first launch. That fallback is the one time a roster is
-  sent anywhere (to Google Play), and the hint under the button, the FAQ and
-  the privacy policy say so — keep them in step and shares its cycles in the same format. The app side is
+  page's "Open in the app" button is an `intent://` link rather than the
+  https one, so it can name a fallback for phones without the app: installed,
+  it opens `shiftyhabits://roster?r=<roster>`; not installed, Chrome falls
+  back to the Play listing with `roster=<roster>` added to the page's utm
+  referrer, which the app reads on first launch. That fallback is the one time
+  a roster is sent anywhere (to Google Play), and the hint under the button,
+  the FAQ and the privacy policy say so; keep them in step. The app reads and
+  shares its cycles in the same format. The app side is
   `utils/rosterLink.ts` in the app repo. It is documented at the top of
   `roster.js`: `#v=1&n=…&s=YYYY-MM-DD&t=…&c=…`.
   Change it only by adding a `v=2` and keeping `v=1` parsing, since links

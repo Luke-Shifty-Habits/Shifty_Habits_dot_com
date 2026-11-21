@@ -617,9 +617,8 @@
     return location.origin + '/roster/#' + encode(state);
   }
 
-  // "Open in the app": an intent:// link, not the https one, since Chrome
-  // doesn't hand a link on the site you're already on to the app that claims
-  // it. With the app installed it opens on shiftyhabits://roster?r=<roster>
+  // "Open in the app": an intent:// link, not the https one, so it can name a
+  // fallback for phones without the app. With the app installed it opens on shiftyhabits://roster?r=<roster>
   // (the # of an intent link holds the intent's own fields, so the roster goes
   // in r). Without it, Chrome follows browser_fallback_url: the Play listing,
   // with the roster added to the referrer next to the page's utm keys, which

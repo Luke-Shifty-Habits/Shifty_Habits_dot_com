@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Where a shared roster link lands: /roster/link/#v=1… is the address the
+     app claims (Android App Links), so with the app installed it never loads.
+     In a browser, link.js forwards the #fragment to the calendar. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e1a">
+
+<title>Shift roster calendar</title>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shifty Habits">
+<meta property="og:url" content="https://shiftyhabits.com/roster/">
+<meta property="og:title" content="Shift roster calendar">
+<meta property="og:description" content="Someone shared their shift roster with you. Open it to see a year of shifts. Free, no sign-up.">
+<meta property="og:image" content="https://shiftyhabits.com/images/og-roster.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shift roster calendar: a year of shifts in colour">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shiftyhabits.com/images/og-roster.jpg">
+
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="stylesheet" href="../../styles.css">
+<script src="link.js"></script>
+</head>
+<body>
+  <main class="container">
+    <p><a id="go" href="../index.html">Open the roster calendar</a></p>
+  </main>
+</body>
+</html>

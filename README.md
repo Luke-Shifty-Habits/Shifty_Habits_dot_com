@@ -21,7 +21,8 @@ a hand-written script with no dependencies; every other page has none.
 index.html      the landing page
 guides/         one directory per guide, each an index.html so the URL is clean
 roster/         the free roster calendar: index.html, roster.js, and one page per common
-                pattern (roster/<pattern>/), see "The roster calendar"
+                pattern (roster/<pattern>/), plus roster/link/ (where share links land);
+                see "The roster calendar"
 privacy/        the app's privacy policy, linked from the app and Play Console
 terms/          the app's terms of service, the URL registered in Play Console
 about/          the author page every guide byline links to (Person JSON-LD, @id …/about/#luke)
@@ -104,8 +105,13 @@ library, loaded with `defer`.
   on a phone, 2026-11), which then bounces it back out to a browser tab.
   `/roster/index.html` isn't claimed. Canonical URLs, the sitemap and JSON-LD
   keep `/roster/`.
+- **Share links are `/roster/link/#v=1…`.** `roster/link/` is the path the
+  app claims (from the build after 1.1.40); in a browser its `link.js`
+  forwards the fragment to `/roster/index.html`. Links shared before then are
+  `/roster/#v=1…` and keep working: 1.1.40 opens them, later builds leave
+  them to the page and its "Open in the app" button.
 - **The link format is a contract with the app**, which opens these links
-  (Android App Links on `/roster/` exactly, verified by
+  (Android App Links on `/roster/link/` exactly — `/roster/` on 1.1.40 — verified by
   `/.well-known/assetlinks.json`, which holds the Play app-signing key). The
   page's "Open in the app" button is an `intent://` link rather than the
   https one, so it can name a fallback for phones without the app: installed,

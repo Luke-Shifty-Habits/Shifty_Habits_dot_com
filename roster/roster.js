@@ -612,9 +612,9 @@
   // ---------------------------------------------------------------- share
 
   function shareUrl() {
-    // Always the main page, whichever pattern page made it: /roster/#v=1… is
-    // the address the app claims.
-    return location.origin + '/roster/#' + encode(state);
+    // /roster/link/#v=1…, whichever page made it: the address the app claims
+    // (App Links); in a browser roster/link/ forwards the fragment here.
+    return location.origin + '/roster/link/#' + encode(state);
   }
 
   // "Open in the app": an intent:// link, not the https one, so it can name a

@@ -98,6 +98,11 @@ library, loaded with `defer`.
   which browsers never send to a server, and in `localStorage` (`roster.v1`,
   plus `roster.weekStart`) so it's there next visit. The page's FAQ and
   `llms.txt` say so; keep it true. No analytics, no third-party requests.
+- **Link to the page itself as `roster/index.html`, never `roster/`.** The app
+  claims the bare `/roster/` path (App Links can't see the `#fragment`), so a
+  plain link to the page opens the app on phones that have it, and the app
+  bounces it back out to a browser tab. `/roster/index.html` isn't claimed.
+  Canonical URLs, the sitemap and JSON-LD keep `/roster/`.
 - **The link format is a contract with the app**, which opens these links
   (Android App Links on `/roster/` exactly, verified by
   `/.well-known/assetlinks.json`, which holds the Play app-signing key). The
